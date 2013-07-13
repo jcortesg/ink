@@ -1,4 +1,16 @@
 Models::Application.routes.draw do
+  resources :books
+
+
+  resources :photographers
+
+
+  resources :agents
+
+
+  resources :models
+
+
   authenticated :user do
     root :to => 'home#index'
   end
