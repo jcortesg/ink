@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+
 
   def index
     @users = User.all
@@ -9,4 +9,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def register
+     
+  end
+
+  def create
+  	binding.pry  
+    redirect_to root_path
+  end
+  
 end
