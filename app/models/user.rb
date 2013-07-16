@@ -2,6 +2,8 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  before_validation :subdomain_valid
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -15,9 +17,9 @@ class User
   ##Personaldata
 
   field :name ,:type => String
- 
-  validates_presence_of :email
-  validates_presence_of :encrypted_password
+  field :contry , :type => String
+  field :state , :type => String
+  field :subdomain , :type => String
   
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -51,7 +53,26 @@ class User
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
   index({ email: 1 }, { unique: true, background: true })
-  field :name, :type => String
-  validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+ 
+
+  validates_presence_of :name , :contry ,:state , :_type
+  validates_presence_of :email
+  validates_presence_of :encrypted_password
+  
+  #validate subdomain
+
+  validates_presence_of :subdomain
+  validates_uniqueness_of :subdomain
+  validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
+  validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/
+
+  #attributes accessibles
+
+  attr_accessible :name, :subdomain ,:email, :password, :password_confirmation, 
+                  :remember_me, :created_at, :updated_at , :_type, :contry ,:state
+
+
+  def subdomain_valid
+    self.subdomain = self.subdomain.downcase! if attribute_present?("sundomain")
+  end
 end
