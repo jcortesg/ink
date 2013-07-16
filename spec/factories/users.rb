@@ -6,6 +6,11 @@ FactoryGirl.define do
     email 'example@example.com'
     password 'changeme'
     password_confirmation 'changeme'
+    subdomain 'example'
+    contry 'comlombia'
+    state 'bogota'
+    _type 'Model'
+   
     # required if the Devise Confirmable module is used
     # confirmed_at Time.now
   end

@@ -1,0 +1,25 @@
+<h1>Listing photographers</h1>
+
+<table>
+  <tr>
+    <th>Language</th>
+    <th>Specialties</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @photographers.each do |photographer| %>
+  <tr>
+    <td><%= photographer.language %></td>
+    <td><%= photographer.specialties %></td>
+    <td><%= link_to 'Show', photographer %></td>
+    <td><%= link_to 'Edit', edit_photographer_path(photographer) %></td>
+    <td><%= link_to 'Destroy', photographer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Photographer', new_photographer_path %>
