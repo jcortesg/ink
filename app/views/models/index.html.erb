@@ -1,0 +1,37 @@
+<h1>Listing models</h1>
+
+<table>
+  <tr>
+    <th>Height</th>
+    <th>Chest</th>
+    <th>Waist</th>
+    <th>Hip</th>
+    <th>Talent</th>
+    <th>Weight</th>
+    <th>Languages</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @models.each do |model| %>
+  <tr>
+    <td><%= model.height %></td>
+    <td><%= model.chest %></td>
+    <td><%= model.waist %></td>
+    <td><%= model.hip %></td>
+    <td><%= model.talent %></td>
+    <td><%= model.weight %></td>
+    <td><%= model.languages %></td>
+    <td><%= model.description %></td>
+    <td><%= link_to 'Show', model %></td>
+    <td><%= link_to 'Edit', edit_model_path(model) %></td>
+    <td><%= link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Model', new_model_path %>

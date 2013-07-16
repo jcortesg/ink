@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Language:</b>
+  <%= @photographer.language %>
+</p>
+
+<p>
+  <b>Specialties:</b>
+  <%= @photographer.specialties %>
+</p>
+
+
+<%= link_to 'Edit', edit_photographer_path(@photographer) %> |
+<%= link_to 'Back', photographers_path %>
