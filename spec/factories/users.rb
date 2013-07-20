@@ -10,6 +10,7 @@ FactoryGirl.define do
     contry 'comlombia'
     state 'bogota'
     _type 'Model'
+    description 'description'
    
     # required if the Devise Confirmable module is used
     # confirmed_at Time.now

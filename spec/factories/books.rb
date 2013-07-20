@@ -6,5 +6,8 @@ FactoryGirl.define do
     description "MyString"
     localitation "MyString"
     photographer "MyString"
+    
   end
+
+  
 end

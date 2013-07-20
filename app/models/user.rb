@@ -20,6 +20,9 @@ class User
   field :contry , :type => String
   field :state , :type => String
   field :subdomain , :type => String
+  field :description, :type => String
+
+
   
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -38,6 +41,8 @@ class User
   ##relations
 
   has_many :books
+  
+
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time
@@ -55,9 +60,15 @@ class User
   index({ email: 1 }, { unique: true, background: true })
  
 
+  ## aceppts attributes
+  accepts_nested_attributes_for :books 
+
+  ##validate
   validates_presence_of :name , :contry ,:state , :_type
   validates_presence_of :email
   validates_presence_of :encrypted_password
+  validates_presence_of :description
+
   
   #validate subdomain
 
@@ -69,7 +80,7 @@ class User
   #attributes accessibles
 
   attr_accessible :name, :subdomain ,:email, :password, :password_confirmation, 
-                  :remember_me, :created_at, :updated_at , :_type, :contry ,:state
+                  :remember_me, :created_at, :updated_at , :_type, :contry ,:state ,:description
 
 
   def subdomain_valid

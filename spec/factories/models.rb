@@ -10,10 +10,13 @@ FactoryGirl.define do
     weight 1.5
     languages "MyString"
     description "MyString"
-    email "mails@example.com"
+    email "hola@example.com"
     name 'Test User'
-    email 'example@example.com'
     password 'changeme'
     password_confirmation 'changeme'
+    subdomain 'example'
+    contry 'colombia'
+    state 'bogota'
+    _type 'Model'
   end
 end

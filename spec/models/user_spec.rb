@@ -8,7 +8,7 @@ describe User do
       :email => "user@example.com",
       :password => "changeme",
       :password_confirmation => "changeme",
-      :description => "Es ta es la description",
+      :description=> "Esta es la description",
       :contry => "Colombia",
       :state => "Bogota",
       :subdomain => "example",
@@ -18,6 +18,11 @@ describe User do
 
   it "should require a contry & state & _type " do
     no_accetp = User.new(@attr.merge(:contry => "" , :state => "",:_type => ""))
+    no_accetp.should_not be_valid
+  end
+
+  it "should require a description" do
+    no_accetp = User.new(@attr.merge(:description => ""))
     no_accetp.should_not be_valid
   end
 
@@ -61,25 +66,31 @@ describe User do
     user_with_duplicate_email.should_not be_valid
   end
 
-  it "should reject duplicate subdomain" do
-    User.create!(@attr)
-    user_with_duplicate_subdomain = User.new(@attr)
-    user_with_duplicate_subdomain.should_not be_valid
-  end
 
-  it "should reject subdomain invalid" do
-    User.new(@attr)
-    subdomain = %w[EXAMPLE sign?)$os www ftp api support blog billing help smtp]
-    subdomain.each do |sundomain|
-      invalid_subdomain = User.new(@attr.merge(:subdomain => subdomain))
-      invalid_subdomain.should_not be_valid
+  describe "subdomain validations" do
+    it "should reject duplicate subdomain" do
+      User.create!(@attr)
+      user_with_duplicate_subdomain = User.new(@attr)
+      user_with_duplicate_subdomain.should_not be_valid
+    end
+
+    it "should reject subdomain invalid" do
+      User.new(@attr)
+      subdomain = %w[EXAMPLE sign?)$os www ftp api support blog billing help smtp]
+      subdomain.each do |sundomain|
+        invalid_subdomain = User.new(@attr.merge(:subdomain => subdomain))
+        invalid_subdomain.should_not be_valid
+      end
+    end
+
+    it "should reject subdomain if it is nil " do
+      no_subdomain_user = User.new(@attr.merge(:subdomain => ""))
+      no_subdomain_user.should_not be_valid
     end
   end
 
-  it "should reject subdomain if it is nil " do
-    no_subdomain_user = User.new(@attr.merge(:subdomain => ""))
-    no_subdomain_user.should_not be_valid
-  end
+
+
 
   describe "passwords" do
     before(:each) do
@@ -94,6 +105,9 @@ describe User do
       @user.should respond_to(:password_confirmation)
     end
   end
+
+
+
 
   describe "password validations" do
 

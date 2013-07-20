@@ -24,7 +24,14 @@ describe ModelsController do
   # Model. As you add validations to Model, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "height" => "1.5" }
+    { "height" => "1.5",
+      "chest" => "1.5",
+      "waist" => "1.5",
+      "hip" => "1.5",
+      "talent" => "MyString",
+      "weight" => "1.5",
+      "languages" => "MyString"
+     }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -50,12 +57,6 @@ describe ModelsController do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new model as @model" do
-      get :new, {}, valid_session
-      assigns(:model).should be_a_new(Model)
-    end
-  end
 
   describe "GET edit" do
     it "assigns the requested model as @model" do
@@ -65,47 +66,10 @@ describe ModelsController do
     end
   end
 
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Model" do
-        expect {
-          post :create, {:model => valid_attributes}, valid_session
-        }.to change(Model, :count).by(1)
-      end
-
-      it "assigns a newly created model as @model" do
-        post :create, {:model => valid_attributes}, valid_session
-        assigns(:model).should be_a(Model)
-        assigns(:model).should be_persisted
-      end
-
-      it "redirects to the created model" do
-        post :create, {:model => valid_attributes}, valid_session
-        response.should redirect_to(Model.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved model as @model" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Model.any_instance.stub(:save).and_return(false)
-        post :create, {:model => { "height" => "invalid value" }}, valid_session
-        assigns(:model).should be_a_new(Model)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Model.any_instance.stub(:save).and_return(false)
-        post :create, {:model => { "height" => "invalid value" }}, valid_session
-        response.should render_template("new")
-      end
-    end
-  end
-
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested model" do
-        model = Model.create! valid_attributes
+        model = FactoryGirl.create(:model)
         # Assuming there are no other models in the database, this
         # specifies that the Model created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -115,13 +79,13 @@ describe ModelsController do
       end
 
       it "assigns the requested model as @model" do
-        model = Model.create! valid_attributes
+        model = FactoryGirl.create(:model)
         put :update, {:id => model.to_param, :model => valid_attributes}, valid_session
         assigns(:model).should eq(model)
       end
 
       it "redirects to the model" do
-        model = Model.create! valid_attributes
+        model =  FactoryGirl.create(:model)
         put :update, {:id => model.to_param, :model => valid_attributes}, valid_session
         response.should redirect_to(model)
       end
@@ -129,7 +93,7 @@ describe ModelsController do
 
     describe "with invalid params" do
       it "assigns the model as @model" do
-        model = Model.create! valid_attributes
+        model = FactoryGirl.create(:model)
         # Trigger the behavior that occurs when invalid params are submitted
         Model.any_instance.stub(:save).and_return(false)
         put :update, {:id => model.to_param, :model => { "height" => "invalid value" }}, valid_session
@@ -137,7 +101,7 @@ describe ModelsController do
       end
 
       it "re-renders the 'edit' template" do
-        model = Model.create! valid_attributes
+        model = FactoryGirl.create(:model)
         # Trigger the behavior that occurs when invalid params are submitted
         Model.any_instance.stub(:save).and_return(false)
         put :update, {:id => model.to_param, :model => { "height" => "invalid value" }}, valid_session
@@ -148,14 +112,14 @@ describe ModelsController do
 
   describe "DELETE destroy" do
     it "destroys the requested model" do
-      model = Model.create! valid_attributes
+      model = FactoryGirl.create(:model) 
       expect {
         delete :destroy, {:id => model.to_param}, valid_session
       }.to change(Model, :count).by(-1)
     end
 
     it "redirects to the models list" do
-      model = Model.create! valid_attributes
+      model = FactoryGirl.create(:model) 
       delete :destroy, {:id => model.to_param}, valid_session
       response.should redirect_to(models_url)
     end

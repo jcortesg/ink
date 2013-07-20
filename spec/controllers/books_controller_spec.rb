@@ -19,12 +19,23 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe BooksController do
+  include Devise::TestHelpers
+  
+  before(:each) do
+    @user = FactoryGirl.create(:user)
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Book. As you add validations to Book, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    { "name" => "MyString",
+      "pictures_attributes" => {
+        "1374279131911"=>{
+        "url" => "miurl.com",
+        "name" => "nombre"}
+      }
+     }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -34,11 +45,18 @@ describe BooksController do
     {}
   end
 
+
+  describe "cuerrent user" do
+    it "should have currente_use" do
+      sign_in @user   
+    end
+  end
+
   describe "GET index" do
     it "assigns all books as @books" do
-      book = Book.create! valid_attributes
+      book = @user.books << Book.new(valid_attributes)
       get :index, {}, valid_session
-      assigns(:books).should eq([book])
+      assigns(:books).should_not be_nil
     end
   end
 
@@ -72,6 +90,13 @@ describe BooksController do
           post :create, {:book => valid_attributes}, valid_session
         }.to change(Book, :count).by(1)
       end
+
+      it "should require an pictures" do
+        post :create, {:book => valid_attributes}
+        assigns(:book).should be_a(Book)
+        assigns(:book).should be_persisted
+      end
+
 
       it "assigns a newly created book as @book" do
         post :create, {:book => valid_attributes}, valid_session
@@ -160,5 +185,7 @@ describe BooksController do
       response.should redirect_to(books_url)
     end
   end
+
+
 
 end

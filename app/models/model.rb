@@ -11,6 +11,8 @@ class Model < User
   field	:birthday, type: String
   field	:firstname, type: String
   field	:lastname , type: String
+  field :type , type: String
 
-  attr_accessible :height , :chest , :waist,:hip,:talent,:weight,:languages ,:description ,:birthday ,:firstname , :lastname
+  attr_accessible :height , :chest , :waist,:hip,:talent,:weight,:languages ,
+                  :description ,:birthday ,:firstname , :lastname
 end
