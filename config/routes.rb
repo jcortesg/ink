@@ -2,34 +2,27 @@ Models::Application.routes.draw do
   
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'users#dashboard'
   end
 
   scope :module => 'akira' do
   end
 
+  match '/' => 'users#show', :constraints => { :subdomain => /.+/ }
 
   resources :books
-
-
   resources :photographers
-
-
   resources :agents
-
-
   resources :models
 
- 
 
   devise_for :users , path_names: { sign_in: "login", sign_out: "logout"}
 
   resources :users do
      collection do
-      get 'register'
+      get 'dashboard'
     end
   end
-
 
   root :to => "home#index"
 

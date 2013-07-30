@@ -6,12 +6,12 @@ class Book
   field :photographer, type: String
 
   belongs_to :user
-  embeds_many  :pictures
+  has_many  :pictures
 
   accepts_nested_attributes_for :pictures
   validates_presence_of :name 
   validates_associated  :pictures
   
-  attr_accessible :name , :description, :localitation , :photographer , :pictures
+  attr_accessible :name , :description, :localitation , :photographer , :pictures_attributes
 
 end

@@ -2,12 +2,13 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  before_validation :subdomain_valid
+  
+  #before_validation :subdomain_valid
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable,
+  devise :database_authenticatable, :registerable ,
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
@@ -21,7 +22,8 @@ class User
   field :state , :type => String
   field :subdomain , :type => String
   field :description, :type => String
-
+  field :_type, :type => String
+  field :active, :type => Boolean, :default => false
 
   
   ## Recoverable

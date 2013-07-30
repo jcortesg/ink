@@ -6,6 +6,10 @@ class Picture
   field :description, type: String
 
   validates_presence_of :url 
-  embedded_in :book
+  belongs_to :book
 
-end
+  mount_uploader :url, ImageUploader
+  attr_accessible :url
+  
+
+end	

@@ -27,6 +27,11 @@
     <%= f.label :photographer %><br />
     <%= f.text_field :photographer %>
   </div>
+  <fieldset>
+    <%= f.fields_for :pictures do |picture| %>
+      <%= picture.file_field :url %>
+    <% end -%>
+  </fieldset>
   <div class="actions">
     <%= f.submit %>
   </div>

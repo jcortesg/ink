@@ -4,7 +4,7 @@ describe Model do
 
 	before(:each) do
 		@attr = {
-			:height =>  1.5,
+		:height =>  1.5,
 	    :chest =>  1.5,
 	    :waist =>  1.5,
 	    :hip =>  1.5,

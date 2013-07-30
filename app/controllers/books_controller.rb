@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.where(user_id: current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,6 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book = Book.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @book }
@@ -25,6 +24,7 @@ class BooksController < ApplicationController
   # GET /books/new.json
   def new
     @book = Book.new
+    4.times{@book.pictures.build}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,10 +40,11 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    user = current_user
     @book = Book.new(params[:book])
 
     respond_to do |format|
-      if @book.save
+      if user.books << @book
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else

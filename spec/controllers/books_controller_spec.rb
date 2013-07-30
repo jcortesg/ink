@@ -31,9 +31,9 @@ describe BooksController do
   def valid_attributes
     { "name" => "MyString",
       "pictures_attributes" => {
-        "1374279131911"=>{
-        "url" => "miurl.com",
-        "name" => "nombre"}
+        "1355130889386"=>{
+          "url" => "miurl.com",
+          "name" => "nombre"}
       }
      }
   end
@@ -92,9 +92,9 @@ describe BooksController do
       end
 
       it "should require an pictures" do
-        post :create, {:book => valid_attributes}
-        assigns(:book).should be_a(Book)
-        assigns(:book).should be_persisted
+        post :create , {:book => valid_attributes}
+        book = Book.first
+        expect(book.pictures.all.count).to eq 1
       end
 
 

@@ -13,10 +13,7 @@ describe Book do
 	end
 
 	describe "Vadidate ralations" do
-		it "should have embed_many picture" do 
-			should embed_many :pictures 
-	  end
-
+		
 	  it "should validate accept nested attributes" do
 	  	should accept_nested_attributes_for  :pictures
 		end

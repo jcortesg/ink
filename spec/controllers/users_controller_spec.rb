@@ -16,4 +16,12 @@ describe UsersController do
     
   end
 
+  describe "GET redirect in register" do
+
+    it "should be redirect_to finish profile" do
+      get :redirect_register, :_type => @user._type
+      response.should be_success
+    end
+  end
+
 end
