@@ -1,9 +1,17 @@
-<div class="container">
-
-  <section class="row">
-    <ul class="top right">
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="#">Top Bar Title </a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="right">
       <li>
-        <%= link_to "Home"%>
+        <%= link_to "Home", root_path%>
       </li>
       <li>
         <%= link_to "Trabajos"%>
@@ -36,5 +44,7 @@
         </li>
       <% end %>
     </ul>
+    </ul>
+
   </section>
-</div>
+</nav>
