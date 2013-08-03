@@ -1,8 +1,12 @@
-<h3>Users</h3>
-<ul class="users">
-  <% @users.each do |user| %>
+<div class="row">
+<ul class="small-block-grid-3">
+	<% @users.each do |user| %>
     <li>
-      <%= link_to user.name, user %> signed up <%= user.created_at.to_date %>
+    	<img src="http://placehold.it/288x200">
+    	<h3 class="subheader"><%= user.name %></h3>
+    	<%= link_to user.name, user %> signed up <%= user.created_at.to_date %>
     </li>
   <% end %>
 </ul>
+</div>
+
