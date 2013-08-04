@@ -12,8 +12,8 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
-  field :email,              :type => String, :default => ""
-  field :encrypted_password, :type => String, :default => ""
+  field :email,              :type => String
+  field :encrypted_password, :type => String
 
   ##Personaldata
 
@@ -66,7 +66,7 @@ class User
   accepts_nested_attributes_for :books 
 
   ##validate
-  validates_presence_of :name , :contry ,:state , :_type
+  validates_presence_of :name ,:_type
   validates_presence_of :email
   validates_presence_of :encrypted_password
   validates_presence_of :description

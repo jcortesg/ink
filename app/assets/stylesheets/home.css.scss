@@ -36,7 +36,6 @@ header{
 footer{
 	padding: 20px;
 	border-top: 1px solid #dfdfdf;
-	margin-top: 10px;
 	background: rgb(244,244,244);
 }
 .marco{
@@ -60,4 +59,9 @@ footer{
 	-webkit-box-shadow: 0px 0px 25px rgba(0,0,0,.4);
 	-moz-box-shadow: 0px 0px 25px rgba(0,0,0,.4);
 	box-shadow: 0px 0px 25px rgba(0,0,0,.4);
+}
+.register{
+	border: 1px solid #dfdfdf;
+	margin: 0px 20px 20px 0px;
+	padding: 40px;
 }
