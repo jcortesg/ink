@@ -1,6 +1,9 @@
 Models::Application.routes.draw do
   
 
+  resources :sites
+
+
   authenticated :user do
     root :to => 'users#dashboard'
   end
