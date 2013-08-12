@@ -1,10 +1,4 @@
-<br>
-<div class="row">
-	<div class="large-4 columns">
-		<h2 class="subheader"><%= @user.name%></h2>
-	</div>
-	<hr>
-</div>
+
 <!-- Information -->
 	<div class="row">
 		<div class="large-8 columns">
@@ -14,6 +8,7 @@
 						<img src="http://www.santafestereo.com/wp-content/uploads/2010/08/02_ANDREA_SERNA_220720093.jpg">
 					</div>
 					<div class="large-7 columns">
+						<%= link_to 'Editar', edit_user_registration_path, :class => "right"%>	
 						<ul>
 							<li>Nombre</li>
 							<li>Pofecion</li>
@@ -37,7 +32,7 @@
 		</div>
 		<div class="large-4 columns">
 			
-				<img src="http://placehold.it/500x300">
+				<%= link_to 'Sitio Web', site_user_path(current_user) ,:class => "large button expand success" %>
 				<img src="http://placehold.it/500x70">
 				<img src="http://placehold.it/500x70">
 				<img src="http://placehold.it/500x70">
@@ -48,5 +43,5 @@
 
 <!-- Body -->
 
-
+<%= debug params%>
 

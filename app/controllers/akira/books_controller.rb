@@ -1,9 +1,12 @@
-class BooksController < ApplicationController
+class Akira::BooksController < ApplicationController
+  layout 'akira'
   # GET /books
   # GET /books.json
   def index
-    @books = Book.where(user_id: current_user)
+    @books = current_user.books
 
+    @book = Book.new
+      4.times{@book.pictures.build}
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @books }
@@ -14,6 +17,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book = Book.find(params[:id])
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @book }

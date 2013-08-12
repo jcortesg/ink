@@ -3,21 +3,15 @@
   <section class="row">
     <ul class="top right">
       <li>
-        <%= link_to "Home"%>
+        <%= link_to "Home" , root_path%>
       </li>
       <li>
         <%= link_to "Trabajos"%>
       </li>
       <li>
-        <%= link_to "portafolios" , users_path %>
+        <%= link_to "portafolios" , home_users_path %>
       </li>
       <% if user_signed_in? %>
-      <li>
-        <%= link_to 'Profile', root_path %>
-      </li> 
-        <li>
-          <%= link_to 'Books', books_path %>
-        </li>
         <li>
           <%= link_to 'Edit account', edit_user_registration_path %>
         </li>

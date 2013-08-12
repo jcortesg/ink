@@ -1,6 +1,5 @@
-class UsersController < ApplicationController
+class Akira::UsersController < ApplicationController
   layout 'akira'
-
   def index
     @users = User.all
   end

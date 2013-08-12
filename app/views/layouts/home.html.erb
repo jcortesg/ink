@@ -15,13 +15,13 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
+  	<%= stylesheet_link_tag    "application/application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= render 'layouts/navigation'%>
+  
 
     <div>
         <%= yield %>

@@ -19,7 +19,8 @@
   <b>Photographer:</b>
   <%= @book.photographer %>
 </p>
-
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<ul class="small-block-grid-4">
+	<%= @book.pictures.each do |f|%>
+		<li><%= image_tag f.url%></li> 
+	<% end -%>
+</ul>

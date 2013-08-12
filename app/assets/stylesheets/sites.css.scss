@@ -20,3 +20,8 @@ nav{
 	background: rgba(0,0,0,0.5);
 	color: rgb(230,230,230);
 }
+.content{
+	max-height: 600px;
+	overflow: scroll;
+	padding: 10px;
+}
