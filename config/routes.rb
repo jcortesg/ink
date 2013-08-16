@@ -22,9 +22,9 @@ Models::Application.routes.draw do
   namespace :home do
     resources :sites
     resources :users, only: [:index, :show ]
-    root :to => "home#index"
+    
   end
-
+  root :to => "home#index"
   devise_for :users , path_names: { sign_in: "login", sign_out: "logout"}
 
 
