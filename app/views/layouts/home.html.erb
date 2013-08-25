@@ -27,28 +27,27 @@
    
 
   <%= yield %>
+    
     <footer>
       <div class="row">
-        <div class="small-4 large-4 columns">
-          <ul class="disc">
-            <li>Privacy policy</li>
-            <li>Terms of service</li>
-            <li>Help</li>
-            <li>Contact</li>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="nav nav-pills">
+            <li><%= link_to "Privacy policy", "#" %></li>
+            <li><%= link_to  "Terms of service", "#"%></li>
+            <li><%= link_to  "Help", ""%></li>
+            <li><%= link_to  "Contact ", ""%></li>
           </ul>
         </div>
-        <div class="small-4 large-4 columns">
-          newletter
-        </div>
-        <div class="small-4 large-4 columns">
-          Social
-        </div>
-        <div class="small-12 large-12 columns">
+
+        
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <em>Todos los derechos reservados **** INC 2013</em>
         </div>
       </div>
     </footer>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
-::HOME
