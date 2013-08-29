@@ -1,7 +1,14 @@
-<div class="row">
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<h3>Row</h3>
+<div class="nav_home">
+	<div class="container">
+		<div class="row">
+			<nav class="navbar" role="navigation">
+				<ul class="nav navbar-nav navbar-right">
+						<li><%= link_to "Home" , "#"%></li>
+						<li><%= link_to "Portafolios" , home_users_path %></li>
+						<li><%= link_to "Login" ,  new_user_session_path  %></li>
+						<li><%= link_to "Registarte" , new_user_registration_path%></li>
+				</ul>
+			<nav>
 		</div>
 	</div>
 </div>
