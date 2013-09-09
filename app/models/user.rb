@@ -2,6 +2,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
+
   
   #before_validation :subdomain_valid
 
@@ -18,10 +19,16 @@ class User
   ##Personaldata
 
   field :name ,:type => String
-  field :contry , :type => String
-  field :state , :type => String
+  field :lastname, :type => String
+  field :genre, :type =>String
+  field :nationality, :type => String
+  field :ubication , :type => String
   field :subdomain , :type => String
   field :description, :type => String
+  field :zip_code, :type => Integer
+  field :address, :type => String
+  field :tel, :type => Integer
+  field :cel, :type => Integer
   field :_type, :type => String
   field :active, :type => Boolean, :default => false
 
@@ -43,6 +50,8 @@ class User
   ##relations
 
   has_many :books
+  has_one :site 
+
   
 
   ## Confirmable
@@ -83,7 +92,6 @@ class User
 
   attr_accessible :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me, :created_at, :updated_at , :_type, :contry ,:state ,:description
-
 
   def subdomain_valid
     self.subdomain = self.subdomain.downcase! if attribute_present?("sundomain")

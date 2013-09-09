@@ -8,7 +8,7 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 
 end
-
+gem 'haml'
 gem 'cancan'
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"

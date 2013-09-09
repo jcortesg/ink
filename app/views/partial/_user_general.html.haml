@@ -1,0 +1,55 @@
+.row
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :name, "Nombre"
+			= f.text_field :name, :pleceholder =>"Nombre", :class=>"form-control"
+
+		.form-group
+			= f.label :genre, "Genero"
+			=	f.text_field :genre, :placeholder =>"Genero", :class=>"form-control"
+
+		.form-group
+			=f.label :birthday , "Fecha de Nacimiento"
+			%div
+				= f.date_select :birthday, {},{:class=>"form-control select_date"}
+	
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :lastname, "Apellidos"
+			=	f.text_field :lastname, :pleceholder =>"Apellido", :class=>"form-control"
+		.form-group
+			= f.label :subdomain , "Username"
+			.input-group
+				=	f.text_field :subdomain , :pleceholder =>"Username", :class=>"form-control"
+				%span.input-group-addon
+					=".dominio.com"
+		.form-group
+			= f.label :nationality,"Lugar de nacimiento"
+			= f.text_field :nationality, :pleceholder => "Lugar de nacimiento", :class=>"form-control"
+
+
+.form-group
+	= f.label :description , "Sobre ti"
+	=	f.text_area :description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 5
+.row
+	%h3
+		Contacto
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :email
+			= f.email_field :email,:pleceholder =>"Ubicacion Actual", :class=>"form-control"
+		.form-group
+			= f.label :tel, "Telefono"
+			= f.number_field :tel, :pleceholder =>"Telefono", :class=>"form-control"
+
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :ubication, "Ubicacion Actual"
+			= f.text_field :ubication, :pleceholder =>"Ubicacion Actual", :class=>"form-control"
+		.form-group
+			= f.label :address, "Direccion"
+			= f.text_field :address,:pleceholder =>"Direccion", :class=>"form-control"
+	
+
+
+

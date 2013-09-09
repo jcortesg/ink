@@ -1,4 +1,4 @@
-class ModelsController < ApplicationController
+class Akira::ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
@@ -35,7 +35,7 @@ class ModelsController < ApplicationController
 
     respond_to do |format|
       if @model.update_attributes(params[:model])
-        format.html { redirect_to @model, notice: 'Model was successfully updated.' }
+        format.html { redirect_to akira_model_path(@model), notice: 'Model was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -1,0 +1,16 @@
+
+%nav.navbar.navbar-default
+	%ul.nav.navbar-nav.navbar-righ
+		%li	
+			= link_to "Home" , root_path
+		%li
+			= link_to "Portafolios" , home_users_path
+		-if current_user
+			%li
+				= link_to "Salir", destroy_user_session_path, :method =>:DELETE
+		-else
+			%li
+				= link_to "Login" ,  new_user_session_path  
+			%li
+				= link_to "Registarte" , new_user_registration_path
+
