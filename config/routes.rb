@@ -4,7 +4,7 @@ Models::Application.routes.draw do
     root :to => 'users#dashboard'
   end
   devise_for :users , path_names: { sign_in: "login", sign_out: "logout"}
-  match '/' => 'sites#show', :constraints => { :subdomain => /.+/ }
+  #match '/' => 'sites#show', :constraints => { :subdomain => /.+/ }
   resources :users, only: [ :show ]
 
 
