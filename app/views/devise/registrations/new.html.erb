@@ -1,70 +1,4 @@
-<<<<<<< HEAD
-<div class="container">
-  <div class="col-md-10 col-md-offset-1">Hola
-    <div class="row">
-      <div div class="col-xs-12 col-sm-12 col-md-12">
-        <h1 class="subheader">Registrate</h1>
-        <p>Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks</p>
-      </div>
 
-
-      <div div class="col-md-6 col-lg-6 col-xs-12">
-        <%= form_for(resource, :as => resource_name, :html => {:multipart => true , :class=>"custom"}, :url => registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-          <div class="register">
-            <div class="row">
-              <div class="large-12 columns">
-                <%= f.text_field :name , :placeholder => "Nombre"%>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-12 columns">
-                <%= f.email_field :email , :placeholder => "Email"%>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="large-12 columns">
-                <%= f.password_field :password , :placeholder => "Password"%>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-12 columns">
-               <%= f.password_field :password_confirmation , :placeholder => "Confirmation Password"%>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="large-12 columns">
-               <%= f.text_area :description  , :placeholder => "Descripcion"%>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-12 columns">
-               <%= f.text_field :subdomain  , :placeholder => "Username"%>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-12 columns">
-                <%= f.select(:_type, [['Model', 'Model'], ['Agent', 'Agent']]) %>
-              </div>   
-            </div>   
-              <div><%= f.submit "Sign up", :class =>" button success radius expand" %></div>
-          </div>
-          <% end %>
-
-      </div>
-
-    </div>
-
-      <div div class="small-6 large-4 columns">
-        <%= render "devise/shared/links" %>
-
-      </div>
-
-    </div>
-</div>
-=======
 <div class="col-xs-12 col-sm-12 col-md-12 ">
 
   <h2>Registrate</h2>
@@ -109,4 +43,4 @@
     </div>
   </div>
 </div>
->>>>>>> origin/master
+
