@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include UrlHelper
 
   def after_sign_in_path_for (resource)
   	type = resource._type
@@ -7,9 +8,9 @@ class ApplicationController < ActionController::Base
   	if type && !active
       case type
       	when 'Model'
-        	edit_model_path(resource.id)
+        	edit_akira_model_path(resource.id)
       	when 'Agent'
-        	edit_agent_path(resource.id)
+        	edit_akira_agent_path(resource.id)
         when 'profetional'
       end
     else

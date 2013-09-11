@@ -21,32 +21,9 @@
 
   <body class="<%=params[:controller]%>" >
 
-      <%= render 'layouts/nav_home' %> 
-    
-   
-
-  <%= yield %>
-    
-    <footer>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <ul class="nav nav-pills">
-            <li><%= link_to "Privacy policy", "#" %></li>
-            <li><%= link_to  "Terms of service", "#"%></li>
-            <li><%= link_to  "Help", ""%></li>
-            <li><%= link_to  "Contact ", ""%></li>
-          </ul>
-        </div>
-
-        
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <em>Todos los derechos reservados **** INC 2013</em>
-        </div>
-      </div>
-    </footer>
-
+    <%= render 'layouts/nav_black' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
