@@ -1,4 +1,5 @@
 class Akira::ModelsController < ApplicationController
+  layout "akira"
   # GET /models
   # GET /models.json
   def index

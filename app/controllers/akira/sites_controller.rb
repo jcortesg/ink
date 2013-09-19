@@ -24,6 +24,7 @@ class Akira::SitesController < ApplicationController
     end
 
     if @site.last_step?
+      session[:step] = nil
       redirect_to akira_user_site_path(@user, @site)
     else
     render 'edit'

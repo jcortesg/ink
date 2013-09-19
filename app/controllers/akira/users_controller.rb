@@ -11,6 +11,7 @@ class Akira::UsersController < ApplicationController
     rescue Exception => e
       logger.warn "Unable to foo, will ignore: #{e}"
       redirect_to new_user_registration_path
+      render layout: 'site'
     end
   end
 
