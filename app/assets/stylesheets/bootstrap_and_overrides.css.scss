@@ -6,9 +6,13 @@ $navbarBackground: #555;
 $navbarBackgroundHighlight: #888;
 $navbarText: #eee;
 $navbarLinkColor: #eee;
-
+.navbar{
+	background-color: rgba(255,255,255, 0.95);
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	}
 #carousel-home{
-	max-height: 500px;
+	max-height: 600px;
 	overflow: hidden;
 }
 .wrap{

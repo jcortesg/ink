@@ -4,7 +4,7 @@
 
 footer{
 	margin-top: 30px;
-	padding: 20px;
+	padding-top: 20px;
 	background: #f6f6f6;
 	border-top: 1px solid #ececec;
 	text-align: center;
@@ -18,6 +18,9 @@ footer{
 			list-style-type:none;
 		}
 	}
+}
+.logo{
+	position: absolute;
 }
 .gray{
 		padding: 2px;
@@ -33,8 +36,9 @@ footer{
 	background: rgba(0,0,0,0.3);
 }
 .carrucel_home{
-	margin-top: -90px;
+	margin-top: -110px;
 }
+
 .home{
 	nav{
 		li{
@@ -47,4 +51,29 @@ footer{
 		background-color: transparent;
 		border: 1px solid transparent;
 	}
+}
+
+
+
+#container{
+	img{
+		max-width: 100%;
+		border: 3px solid #fff;
+	}
+}
+
+.portfolio{
+	background: #fff;
+	margin: 5px;
+	padding:15px;
+	border: 1px solid #ededed;
+}
+.index{
+	background: url(images/portafolio_bg.png);
+}
+
+.reserved{
+	min-height: 30px;
+	background: url(images/bg_footer.png);
+	background-size: 100%;
 }

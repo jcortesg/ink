@@ -1,0 +1,13 @@
+%nav{:role=>"navigation", :class=>"navbar nav_home"}
+	.logo
+		=image_tag("images/isfamous.png")
+	.collapse.navbar-collapse.navbar-ex1-collapse
+		%ul.nav.navbar-nav.navbar-right
+			%li
+				= link_to "Home" ,"#"
+			%li
+				= link_to "Portafolios",home_users_path
+			%li
+				= link_to "Login" , new_user_session_path
+			%li
+				= link_to "Registarte" ,new_user_registration_path

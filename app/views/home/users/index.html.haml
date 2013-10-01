@@ -1,2 +1,69 @@
--@users.each do |user|
-	= user.name
+
+#container
+	%article.item_portfolio.col-sm-6.col-md-4.col-lg-4
+		.portfolio.center
+			“Give a girl the right shoes, and she can conquer the world.”
+	%article.item_portfolio.col-sm-6.col-md-4.col-lg-4
+		.portfolio.center
+			= image_tag "http://www.entremodelos.com/includes/image_crop_thumb.php?src=http://www.entremodelos.com/images/users/victoria_1374659678.jpg&w=290&h=472"
+			%h4
+				Titulo
+			%p
+
+				Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+				%hr
+	%article.item_portfolio.col-sm-6.col-md-4.col-lg-4
+		.portfolio.centero
+			= image_tag "http://img23.fansshare.com/media/content1/570_Miranda-Kerr-confirms-Victoria-s-Secret-departure-rumors-3256.jpg"
+			%h4
+				Titulo
+			%p
+
+				Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+				%hr
+	%article.item_portfolio.col-sm-6.col-md-4.col-lg-4
+		.portfolio.center
+			= image_tag "http://img23.fansshare.com/media/content1/550x298_miranda-kerr-confirms-victoria-s-secret-departure-rumors-3550.jpg"
+			%h4
+				Titulo
+			%p
+				Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+				%hr
+	%article.item_portfolio.col-sm-6.col-md-4.col-lg-4
+		.portfolio.center
+			= image_tag "http://img23.fansshare.com/media/content1/550x298_miranda-kerr-confirms-victoria-s-secret-departure-rumors-3550.jpg"
+			%h4
+				Titulo
+			%p
+
+				Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+				%hr
+
+	%article.item_portfolio.col-sm-6.col-md-4.col-lg-4
+		.portfolio.center
+			= image_tag "http://img23.fansshare.com/media/content1/570_Miranda-Kerr-confirms-Victoria-s-Secret-departure-rumors-3256.jpg"
+			%h4
+				Titulo
+			%p
+
+				Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+				%hr
+	%article.item_portfolio.col-sm-6.col-md-4.col-lg-4
+		.portfolio.center
+			= image_tag "http://eu.cdn281.fansshare.com/photos/mirandakerr/miranda-kerr-victorias-secret-lingerie-victoria-secret-59539259.jpg"
+			%h4
+				Titulo
+			%p
+
+				Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+				%hr
+
+
+:javascript
+
+	var container = document.querySelector('#container');
+	var msnry = new Masonry( container, {
+	  // options
+	  columnWidth: 0,
+	  itemSelector: '.item_portfolio'
+	});

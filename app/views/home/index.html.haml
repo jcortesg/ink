@@ -1,0 +1,56 @@
+#carousel-home.carousel.slide.carrucel_home
+  /Wrapper for slides
+  .carousel-inner
+    .item.active
+      = image_tag "images/home1.png"
+  /Controls
+
+  %a{ :class=>"left carousel-control", :href=>"#carousel-example-generic", :"data-slide"=>"prev"}
+    %span.icon-prev
+
+  %a{ :class=>"right carousel-control",:href=>"#carousel-example-generic", :"data-slide"=>"next"}
+    %span.icon-next
+
+
+%section.info.container
+  .row
+    .col-sm-4.col-md-4.col-lg-4
+      .subtitle
+        %h3
+          Top talent sekkers
+      %p
+        The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
+
+    .col-sm-8.col-md-8.col-lg-8
+      .row
+        .subtitle
+          %h3
+            Lastest Portafolios
+          %hr.gray
+        .col-sm-6.col-md-6.col-lg-6
+          .media
+            %a.pull-left
+              =image_tag("http://placehold.it/105x105")
+            .media-body
+              %h4.media-heading
+                Nombre
+              The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil
+
+  .row
+    .subtitle
+      %h3
+        Featured Auditiond & Jobs
+      %hr.gray
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
+      .media
+        %a.pull-left
+          = image_tag ("http://placehold.it/105x105")
+        .media-body
+          %h4.media-heading
+            Example Jobs
+          %p
+            The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil
+
+
+
+
