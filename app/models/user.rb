@@ -73,6 +73,7 @@ class User
 
   ## aceppts attributes
   accepts_nested_attributes_for :books 
+  accepts_nested_attributes_for :site
 
   ##validate
   validates_presence_of :name ,:_type
@@ -91,7 +92,7 @@ class User
   #attributes accessibles
 
   attr_accessible :name, :subdomain ,:email, :password, :password_confirmation, 
-                  :remember_me, :created_at, :updated_at , :_type, :contry ,:state ,:description
+                  :remember_me, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid
     self.subdomain = self.subdomain.downcase! if attribute_present?("sundomain")

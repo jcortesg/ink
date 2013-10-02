@@ -5,27 +5,34 @@ class Akira::SitesController < ApplicationController
   end
   # GET /sites/1/edit
   def edit
+    session[:user_params] ||={}
     @user = current_user
     @user[:step] = "first"
   end
 
   def update
+    role = current_user._type
+    session[:user_params].deep_merge!(params[:model])if params[:model]
     @user = User.find(params[:user_id])
-    binding.pry
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @site, notice: 'Site was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @site.errors, status: :unprocessable_entity }
-      end
+    @site = @user.site
+    @site.current_step = session[:step]
+    if params[:previous_button]
+      @site.previous_step
+    else
+      @site.next_step
+      @user.update_attributes!(params[:model])
+    end
+
+    if @site.last_step?
+      session[:step] = nil
+      redirect_to akira_user_site_path(@user, @site)
+    else
+    render 'edit'
+    session[:step] = @site.current_step
     end
   end
 
-  def second_step
-     @user = current_user
-  end
+
   # DELETE /sites/1
   # DELETE /sites/1.json
   def destroy

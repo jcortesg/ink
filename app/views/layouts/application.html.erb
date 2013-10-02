@@ -16,10 +16,12 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
-  <body class="<%= params[:controller] %>">
+  <body class="<%= params[:action] %>">
       <%= render 'layouts/nav_white' %> 
     <div class="wrap">
     <div class="container">
@@ -30,7 +32,8 @@
       
     </div>
     <%= render 'layouts/footer' %>
-    <%= javascript_include_tag "application" %>
+    
   </body>
 
 </html>
+

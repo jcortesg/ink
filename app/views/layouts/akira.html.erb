@@ -29,6 +29,7 @@
     <div class="wrap">
     <div class="container">
       <div class="row">
+      <%= render "users/profile" , user: current_user %>
         <%= yield %>
       </div>
     </div>
@@ -38,5 +39,5 @@
     
     <%= javascript_include_tag "application" %>
   </body>
-  akira
+  Akira
 </html>

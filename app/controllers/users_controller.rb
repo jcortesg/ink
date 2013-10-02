@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     else
       @user.site = Site.new
     end
+    render layout: "akira"
   end
 
 
