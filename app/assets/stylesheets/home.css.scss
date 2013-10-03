@@ -8,6 +8,7 @@ footer{
 	border-top: 1px solid #ececec;
 	text-align: center;
 	color: #888;
+	background: #fff;
 	a{
 		color: #888888;
 	}
@@ -41,18 +42,7 @@ footer{
 	margin-top: -110px;
 }
 
-.home{
-	nav{
-		li{
-			a{
-				color: #fff;
-			}
-		}
-	}
-	.navbar{
-		background-color: transparent;
-	}
-}
+
 
 
 
@@ -70,11 +60,11 @@ footer{
 	border: 1px solid #ededed;
 }
 .index{
-	background: url(images/portafolio_bg.png);
+	background: url(portafolio_bg.png);
 }
 
 .reserved{
 	min-height: 30px;
-	background: url(images/bg_footer.png);
+	background: url(bg_footer.png);
 	background-size: 100%;
 }

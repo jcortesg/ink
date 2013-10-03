@@ -3,3 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*
 */
+
+.site_nav{
+	background: rgba(0,0,0,0.9);
+	margin-bottom: 20px;
+}
+.content_site{
+	padding: 20px;
+	overflow: scroll;
+	height: 650px;
+	background: rgba(0,0,0,0.7);
+	color:#dfdfdf;
+}
+
+.books_site{
+	img{
+		height: 150px;
+		width: 100%;
+		margin-top: 30px;
+	}
+}
