@@ -23,3 +23,14 @@
 		margin-top: 30px;
 	}
 }
+.books_index{
+	.thumbnail{
+		margin-bottom: 30px;
+	}
+	
+}
+.description{
+	-moz-column-count:2; /* Firefox */
+	-webkit-column-count:2; /* Safari and Chrome */
+	column-count:2;
+	}

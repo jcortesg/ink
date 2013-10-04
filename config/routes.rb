@@ -1,10 +1,19 @@
 Models::Application.routes.draw do
   
+  
+
   authenticated :user do
     root :to => 'users#dashboard'
   end
   devise_for :users , path_names: { sign_in: "login", sign_out: "logout"}
-  match '/' => 'sites#show', :constraints => { :subdomain => /.+/ }
+  
+ scope :module => 'site', :constraints => { :subdomain => /.+/ } do
+    root :to =>'sites#show'
+    get 'about', to: 'users#show'
+    get 'books', to: 'books#show'
+    get "contact", to: 'contact#show'
+  end
+
   resources :users, only: [ :show ]
 
 
