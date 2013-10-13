@@ -49,7 +49,7 @@ class Akira::BooksController < ApplicationController
 
     respond_to do |format|
       if user.books << @book
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to akira_user_book(@book), notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else
         format.html { render action: "new" }

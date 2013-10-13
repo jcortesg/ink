@@ -1,0 +1,20 @@
+#notice
+  = notice 
+
+Name:
+= @book.name
+
+Description:
+= @book.description 
+Localitation:
+= @book.localitation 
+Photographer:
+= @book.photographer
+
+.small-block-grid-4
+-@book.pictures.each do |f|
+  = image_tag f.url
+
+
+%block
+  =link_to "Editar",  edit_akira_user_book_path(current_user, @book)

@@ -10,7 +10,8 @@ Models::Application.routes.draw do
  scope :module => 'site', :constraints => { :subdomain => /.+/ } do
     root :to =>'sites#show'
     get 'about', to: 'users#show'
-    get 'books', to: 'books#show'
+    get 'books', to: 'books#index'
+    get 'book/:id', to: 'books#show', as: "pictures"
     get "contact", to: 'contact#show'
   end
 

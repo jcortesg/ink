@@ -1,0 +1,8 @@
+.col-xs-12.col-sm-12.col-md-9.col-lg-9
+	%h1
+		Editing book
+
+	= form_for @book , :url => akira_user_book_path(current_user, @book) do |f|
+		= render 'form' , :f => f
+
+
