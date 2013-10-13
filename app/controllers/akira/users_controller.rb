@@ -32,5 +32,9 @@ class Akira::UsersController < ApplicationController
       end
     end
   end
+
+  def edit
+    
+  end
   
 end

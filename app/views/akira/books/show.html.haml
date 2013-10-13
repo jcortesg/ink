@@ -1,20 +1,18 @@
-#notice
-  = notice 
+.col-xs-6.col-sm-6.col-md-9.col-lg-9
+	#notice
+		= notice 
 
-Name:
-= @book.name
+	%block
+		=link_to "Editar",  edit_akira_user_book_path(current_user, @book), :class=>"btn btn-success pull-right"
 
-Description:
-= @book.description 
-Localitation:
-= @book.localitation 
-Photographer:
-= @book.photographer
+	%h3
+		= @book.name
 
-.small-block-grid-4
--@book.pictures.each do |f|
-  = image_tag f.url
-
-
-%block
-  =link_to "Editar",  edit_akira_user_book_path(current_user, @book)
+	%p
+		= @book.description 
+	.row
+		#container
+			-@book.pictures.each do |f|
+				.col-sm-12.col-md-4.col-lg-4.item_
+					.thumbnai.center
+						= image_tag f.url

@@ -1,7 +1,5 @@
 Models::Application.routes.draw do
   
-  
-
   authenticated :user do
     root :to => 'users#dashboard'
   end
