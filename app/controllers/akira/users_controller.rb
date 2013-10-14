@@ -1,9 +1,9 @@
 class Akira::UsersController < ApplicationController
   layout 'akira'
+  
   def index
     @users = User.all
   end
-
 
   def show
     begin
@@ -35,6 +35,20 @@ class Akira::UsersController < ApplicationController
 
   def edit
     
+  end
+
+  def update
+    @model = User.find(params[:id])
+
+    respond_to do |format|
+      if @model.update_attributes(params[:user])
+        format.html { redirect_to root_path, notice: 'Model was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @model.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
 end

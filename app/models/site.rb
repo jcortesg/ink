@@ -9,10 +9,11 @@ class Site
   field :subdomain, type: String
   field	:logo, type: String
   field	:slogan, type: String
+  field :bg, type: String
   
   belongs_to :user
-
-  attr_accessible :visit, :title, :description, :subdomain, :logo, :slogan
+  mount_uploader :bg, ImageUploader
+  attr_accessible :bg, :visit, :title, :description, :subdomain, :logo, :slogan
 
   def current_step
     @current_step || steps.first

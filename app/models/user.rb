@@ -46,7 +46,10 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
+  
+  ##picture
 
+  field :photo, :type => String
   ##relations
 
   has_many :books
@@ -81,7 +84,7 @@ class User
   validates_presence_of :encrypted_password
   validates_presence_of :description
 
-  
+  mount_uploader :photo, ImageUploader
   #validate subdomain
 
   validates_presence_of :subdomain
@@ -91,7 +94,7 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :name, :subdomain ,:email, :password, :password_confirmation, 
+  attr_accessible :photo, :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid

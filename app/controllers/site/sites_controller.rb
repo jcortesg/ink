@@ -1,5 +1,4 @@
 class Site::SitesController < ApplicationController
-	
 	layout 'sites'
   def show
     begin

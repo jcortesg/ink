@@ -1,13 +1,15 @@
-= link_to "Nuevo book ", new_akira_user_book_path(current_user), :class=>"btn btn-success pull-right"
-%h3
-	Books
-.row
-	#container
-		-@books.each do |book| 
-			.col-sm-12.col-md-4.col-lg-4.item_
-				.thumbnai.center
-					= image_tag book.front
-					= link_to book.name, akira_user_book_path(current_user , book.id)
+.col-sm-12.col-md-9.col-lg-9	
+	%h3
+		Books
+	= link_to "Nuevo book ", new_akira_user_book_path(current_user), :class=>"btn btn-success pull-right"
+	
+	.row
+		#container
+			-@books.each do |book| 
+				.col-sm-12.col-md-4.col-lg-4.item_
+					.thumbnai.center
+						= image_tag book.front
+						= link_to book.name, akira_user_book_path(current_user , book.id)
 
 
 
