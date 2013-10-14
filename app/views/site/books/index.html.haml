@@ -1,0 +1,22 @@
+.row
+
+	.col-sm-12.col-md-10.col-lg-10
+		.content_site
+			.title
+				%h3
+					Books
+			.article
+				.row.books_index
+					#container
+						- @books.each do |book|
+							.col-sm-12.col-md-4.col-lg-4.item_
+								.thumbnai.center
+									= link_to image_tag(book.front), pictures_path(book.id)
+
+
+:javascript
+
+	var container = document.querySelector('#container');
+	var msnry = new Masonry( container, {
+	  itemSelector: '.item_'
+	});

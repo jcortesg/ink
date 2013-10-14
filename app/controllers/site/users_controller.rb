@@ -10,4 +10,8 @@ class Site::UsersController < ApplicationController
     end
   end
 
+  def about
+  	
+  end
+
 end

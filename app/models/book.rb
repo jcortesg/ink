@@ -4,14 +4,16 @@ class Book
   field :description, type: String
   field :localitation, type: String
   field :photographer, type: String
+  field :front, type: String
 
   belongs_to :user
   has_many  :pictures
 
+  mount_uploader :front, ImageUploader
   accepts_nested_attributes_for :pictures
   validates_presence_of :name 
   validates_associated  :pictures
   
-  attr_accessible :name , :description, :localitation , :photographer , :pictures_attributes
+  attr_accessible :name ,:front, :description, :localitation , :photographer , :pictures_attributes
 
 end

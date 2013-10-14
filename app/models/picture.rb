@@ -5,6 +5,7 @@ class Picture
   field :name, type: String
   field :description, type: String
 
+
   validates_presence_of :url 
   belongs_to :book
 
