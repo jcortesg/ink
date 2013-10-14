@@ -5,7 +5,7 @@
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
 			=site.label :tile, "Titulo"
-			=site.text_field :title , class:"form-control", pleaceholder: "Titulo"
+			=site.text_field :title , class: "form-control", pleaceholder: "Titulo"
 		.form-group
 			= site.label :slogan
 			= site.text_field :slogan,:pleceholder =>"Ubicacion Actual", :class=>"form-control"	
@@ -17,13 +17,15 @@
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
 			=site.label :subdomain, "Subdominio"
-			=site.text_field :subdomain , class:"form-control", pleaceholder: "Subdominio"
+			=site.text_field :subdomain , class: "form-control", pleaceholder: "Subdominio"
+		
 		.form-group
 			= site.label :logo
-			= site.file_field :logo,:pleceholder =>"Ubicacion Actual", :class=>"form-control"	
+			= site.file_field :logo,class: "form-control", :pleceholder =>"Ubicacion Actual"	
 		
-	= f.label :tel, "Telefono"
-	= f.number_field :tel, :pleceholder =>"Telefono", :class=>"form-control"
+		.form-group
+			= f.label :tel, "Telefono"
+			= f.number_field :tel, :pleceholder =>"Telefono", class: "form-control"
 .col-xs-12.col-sm-12.col-md-12.col-lg-12
 	.form-group
 		= f.label :description , "Sobre ti"
