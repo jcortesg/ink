@@ -1,6 +1,6 @@
 class Akira::SitesController < ApplicationController
-
-	 def new
+  layout 'akira'
+	def new
     @site = Site.new
   end
   # GET /sites/1/edit

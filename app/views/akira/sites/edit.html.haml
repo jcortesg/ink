@@ -1,6 +1,6 @@
-
-= form_for(@user, :url=> akira_user_site_path(@user)) do |f|
-	=render "akira/sites/#{@user.site.current_step}_step", f: f
-	= f.submit "Atras" , name: "previous_button",class: "btn btn-default pull-right" unless @user.site.first_step?
-	=f.submit "Siguiente" ,class: "btn btn-success pull-right"
-= session[:step]
+.col-xs-6.col-sm-6.col-md-9.col-lg-9
+	= form_for(@user, :url=> akira_user_site_path(@user)) do |f|
+		=render "akira/sites/#{@user.site.current_step}_step", f: f
+		= f.submit "Atras" , name: "previous_button",class: "btn btn-default pull-right" unless @user.site.first_step?
+		=f.submit "Siguiente" ,class: "btn btn-success pull-right"
+	= session[:step]
