@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap 
+ *
 */
 $gris: #f9f7f2;
 $gray_dark: #dcd9d6;
@@ -18,7 +18,7 @@ $gray_dark: #dcd9d6;
 @import "sites";
 @import "models";
 @import "bootstrap_and_overrides";
-@import "bootstrap";
+@import "bootstrap.min";
 
 
 
