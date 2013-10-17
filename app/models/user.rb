@@ -33,7 +33,8 @@ class User
   field :active, :type => Boolean, :default => false
 
   ## Site Data
-  field :general_description
+  field :general_description , :type => String
+  field :professional_description , :type => String 
   
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -96,7 +97,7 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
+  attr_accessible :profetion_description,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid
