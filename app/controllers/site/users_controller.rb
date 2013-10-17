@@ -1,8 +1,9 @@
 class Site::UsersController < ApplicationController
   layout 'sites'
 
-  def about
+  def show
   	
+     @user = User.find_by(subdomain: request.subdomain)
   end
 
 end

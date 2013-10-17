@@ -1,5 +1,5 @@
-.col-xs-6.col-sm-6.col-md-3.col-lg-3
-	=link_to image_tag("http://www.tuzonaelite.com/wp-content/uploads/2013/04/laura-acu%C3%B1a.jpg",:class=>"img-thumbnail"), "#myPicture" ,  :"data-toggle"=>"modal"
+.col-sm-2.col-md-3.col-lg-3.pading_profile.hidden-xs
+	=link_to image_tag(current_user.photo ,:class=>"img-profile") , "#myPicture" , :"data-toggle"=>"modal"
 	.list-group
 		= link_to "Editar", edit_akira_model_path(current_user), :class=>"list-group-item"
 
@@ -12,8 +12,17 @@
 		.modal-content
 			.modal-header
 				%h5
-					Desea cambiar su foto de perfil
+					Cambiar su foto de perfil
 			.modal-body
+				= form_tag akira_user_path(current_user),:multipart => true ,:method => :put  do |f|
+					.img-thumbnail
+						= image_tag current_user.photo
+					= fields_for :user do |a|
+						.form-group
+							= a.file_field :photo, :class=>"form-control"
+					.form-group
+						.pull-right
+							=submit_tag "Cambiar Imagen", :class=>"btn btn-default"
 
 
 :javascript

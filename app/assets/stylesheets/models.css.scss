@@ -1,6 +1,7 @@
 // Place all the styles related to the models controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .select_date{
 	width: 30%;
 	display: inline-block;
@@ -11,4 +12,24 @@
 }
 .red{
 	background: #901a00
+}
+.img-profile{
+	width: 100%;
+}
+.head_akira{
+	background: $gris;
+	border-bottom: 1px solid $gray_dark;
+	.statics{
+		padding: 20px;
+		display: inline-block;
+	}
+}
+.pading_profile{
+	padding: 0px;
+}
+.nav_event{
+	padding-top: 5px
+}
+.stream{
+	padding: 20px;
 }

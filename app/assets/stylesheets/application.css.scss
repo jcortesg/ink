@@ -10,7 +10,20 @@
  *
  *= require_self
 */
+$gris: #f9f7f2;
+$gray_dark: #dcd9d6;
 
+@import "home";
+@import "sites";
+@import "models";
+@import "bootstrap_and_overrides";
+@import "bootstrap.min.css";
+
+
+
+.center{
+  text-align: center;
+}
 .brand {
   float: left;
   padding-right: 8px;
@@ -36,3 +49,6 @@ ul.nav li {
   border: solid 1px #C66;
 }
  
+.center{
+  text-align: center;
+}

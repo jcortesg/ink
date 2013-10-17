@@ -1,18 +1,21 @@
 .col-xs-6.col-sm-6.col-md-9.col-lg-9
-	#notice
-		= notice 
+	.row.head_akira.center
+		%h3
+			= @book.name
+	.stream
+		#notice
+			= notice 
 
-	%block
-		=link_to "Editar",  edit_akira_user_book_path(current_user, @book), :class=>"btn btn-success pull-right"
+		%block
+			=link_to "Editar",  edit_akira_user_book_path(current_user, @book), :class=>"btn btn-success pull-right"
 
-	%h3
-		= @book.name
 
-	%p
-		= @book.description 
-	.row
-		#container
-			-@book.pictures.each do |f|
-				.col-sm-12.col-md-4.col-lg-4.item_
-					.thumbnai.center
-						= image_tag f.url
+
+		%p
+			= @book.description 
+		.row
+			#container
+				-@book.pictures.each do |f|
+					.col-sm-12.col-md-4.col-lg-4.item_
+						.thumbnai.center
+							= image_tag f.url

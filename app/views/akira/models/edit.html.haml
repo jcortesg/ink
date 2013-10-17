@@ -1,9 +1,10 @@
 = form_for(@model, :url => akira_model_path) do |f|
 	
 	.col-xs-12.col-sm-12.col-md-9.col-lg-9
-
-		%h3
-			Informacion Personal
+		.row.head_akira.center
+			%h3
+				Informacion Personal
+		%br
 		= render "partial/user_general" , f: f 
 
 		= f.submit "Guardar", :class =>"btn btn-success pull-right"

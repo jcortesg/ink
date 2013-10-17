@@ -38,6 +38,7 @@ class Akira::UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @model = User.find(params[:id])
 
     respond_to do |format|

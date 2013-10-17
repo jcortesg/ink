@@ -1,9 +1,15 @@
 #container
 	.row
-		%article.item_portfolio.col-sm-12.col-md-9.col-lg-9.center
-			= image_tag "http://www.entremodelos.com/includes/image_crop_thumb.php?src=http://www.entremodelos.com/images/users/victoria_1374659678.jpg&w=290&h=472"
-		%article.item_portfolio.col-sm-12.col-md-3.col-lg-3
+		%article.item_portfolio.col-sm-12.col-md-8.col-lg-8
+			.portfolio
+				%figure.center
+					= image_tag @user.photo
+				%p
+					%h3
+						=@user.name
+					Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
+			.portfolio
+				%p
 
-			%p
-
-				Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+					Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….

@@ -1,31 +1,33 @@
-%h4
-	Descripción
-.row
-	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			=f.label :firstname, "Nombres"
-			=f.text_field :firstname , class: "form-control", pleaceholder: "Nombre"
-		.form-group
-			=f.label :age, "Edad"
-			=f.number_field :age, class: "form-control",pleaceholder: "Edad"
+.row.head_akira.center
+	%h3
+		Descripción
+.stream
+	.row
+		.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			.form-group
+				=f.label :firstname, "Nombres"
+				=f.text_field :firstname , class: "form-control", pleaceholder: "Nombre"
+			.form-group
+				=f.label :age, "Edad"
+				=f.number_field :age, class: "form-control",pleaceholder: "Edad"
 
-	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			=f.label :lastname, "Apellidos"
-			=f.text_field :lastname , class:"form-control", pleaceholder: "Apellidos"
-		.form-group
-			= f.label :talent, "Talento"
-			= f.text_field :talent, class: "form-control", pleaceholder: "Talento"
-.row
-	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			=f.label :height, "Altura"
-			=f.number_field :height, class: "form-control", pleaceholder: "Altura"
-		.form-group
-			=f.label :chest, "Pecho"
-			=f.number_field :chest, class: "form-control", pleaceholder: "Pecho"
+		.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			.form-group
+				=f.label :lastname, "Apellidos"
+				=f.text_field :lastname , class:"form-control", pleaceholder: "Apellidos"
+			.form-group
+				= f.label :talent, "Talento"
+				= f.text_field :talent, class: "form-control", pleaceholder: "Talento"
+	.row
+		.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			.form-group
+				=f.label :height, "Altura"
+				=f.number_field :height, class: "form-control", pleaceholder: "Altura"
+			.form-group
+				=f.label :chest, "Pecho"
+				=f.number_field :chest, class: "form-control", pleaceholder: "Pecho"
 
-	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			= f.label :weight, "Peso"
-			=f.number_field :weight, class: "form-control", pleaceholder: "Peso"
+		.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			.form-group
+				= f.label :weight, "Peso"
+				=f.number_field :weight, class: "form-control", pleaceholder: "Peso"

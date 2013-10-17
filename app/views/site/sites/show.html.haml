@@ -14,10 +14,8 @@
 				.h3
 					Books
 				.books_site
-					.col-sm-6.col-md-4.col-lg-4
-						= image_tag("http://placehold.it/350x350" ,:class=>"img-thumbnail")
-					.col-sm-6.col-md-4.col-lg-4
-						= image_tag("http://placehold.it/350x350" ,:class=>"img-thumbnail")
-					.col-sm-6.col-md-4.col-lg-4
-						= image_tag("http://placehold.it/350x350" ,:class=>"img-thumbnail")
+					-  @books.each do |book|
+						.col-sm-6.col-md-4.col-lg-4
+							= image_tag(book.front ,:class=>"img-thumbnail")
+					
 			

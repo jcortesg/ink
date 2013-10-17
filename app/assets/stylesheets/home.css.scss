@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 footer{
-	margin-top: 30px;
 	padding-top: 20px;
 	border-top: 1px solid #ececec;
 	text-align: center;
@@ -33,7 +32,7 @@ footer{
 	position: relative;
 	z-index: 1030;
 	width: 100%;
-	background: url('top_bg1.png');
+	background: url('top_bg1.png') no-repeat;
 	background-size: 100%;
 	border: 0px;
 	.navbar-nav>li>a{
@@ -59,7 +58,7 @@ footer{
 	padding:15px;
 	border: 1px solid #ededed;
 }
-.index{
+.user_bg{
 	background: url(portafolio_bg.png);
 }
 
@@ -67,4 +66,37 @@ footer{
 	min-height: 30px;
 	background: url(bg_footer.png);
 	background-size: 100%;
+}
+.famous_list{
+	margin-bottom: 15px;
+	.ver{
+		color: #fff;
+		background: #343434;
+		padding: 5px 15px; 
+		&:hover{ 
+			background: #db3432;
+			text-decoration:none;
+		}
+	}
+	picture{
+		height: 100px;
+		width: 100px;
+		display: inline-block;
+		img{
+			width: 100%;
+		}
+	}
+}
+
+.info{
+	margin-top: 10px
+}
+
+.item_portfolio{
+	color: #000;
+	a{
+		&:hover{
+
+		}
+	}
 }

@@ -1,18 +1,40 @@
 .col-xs-12.col-sm-12.col-md-9.col-lg-9
-	.row
-		.col-xs-6.col-sm-6.col-md-3.col-lg-3
-			%h1.lead
-				My Perfil
+	=render 'akira/partials/nav_profile'
+	.row.head_akira
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			.row
+				.statics
+					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
+						Facebook
+					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
+						Twitter
 
-		.col-xs-6.col-sm-6.col-md-3.col-lg-3
-			%h1.lead
-				Mis Ofertas
-		.col-xs-6.col-sm-6.col-md-3.col-lg-3
-			%h1.lead
-				My Book
-		.col-xs-6.col-sm-6.col-md-3.col-lg-3
-			%h1.lead
-				My Sitio
+					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
+						Visitas
+					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
+						Instagram
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12.nav_event
+			.lead
+				Eventos
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12.stream
+			.media
+				.pull-left
+					= image_tag "http://placehold.it/100x100",:class=>"img-circle media-object"
+				.media-body
+					.media-heading
+						%h4
+							Hala k ase
+					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+
+
+
 
 
 

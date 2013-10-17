@@ -1,6 +1,8 @@
 .col-xs-12.col-sm-12.col-md-9.col-lg-9
-	%h1
-		Nuevo Book
+	.row.head_akira.center
+		%h3
+			Crear un nuevo portafolio
 
-	= form_for @book , :url => akira_user_books_path(current_user) do |f|
-		= render 'form' , :f => f
+	.stream
+		= form_for @book , :url => akira_user_books_path(current_user) do |f|
+			= render 'form' , :f => f

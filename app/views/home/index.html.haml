@@ -18,8 +18,9 @@
       .subtitle
         %h3
           Top talent sekkers
+        %hr.gray
       %p
-        The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
+        The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. 
 
     .col-sm-8.col-md-8.col-lg-8
       .row
@@ -27,15 +28,23 @@
           %h3
             Portafolios Destacados
           %hr.gray
-        .col-sm-6.col-md-6.col-lg-6
-          .media
-            %a.pull-left
-              =image_tag("http://placehold.it/105x105")
-            .media-body
-              %h4.media-heading
-                Nombre
-              The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil
-
+        -@users.each do |user|
+          .col-sm-6.col-md-6.col-lg-6.famous_list
+            .media
+              %a.pull-left
+                %picture
+                  =image_tag user.photo
+              .media-body
+                %h4.media-heading
+                  =user.name
+                %p.text-muted
+                  %small
+                    %em
+                      (Model/product)
+                    %br
+                    Cali/Colombia
+                = link_to "Ver Perfil", home_user_path(user), :class=>"ver"
+%section.info.container
   .row
     .subtitle
       %h3

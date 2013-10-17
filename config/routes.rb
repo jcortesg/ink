@@ -1,5 +1,8 @@
 Models::Application.routes.draw do
   
+  resources :jobs
+
+
   authenticated :user do
     root :to => 'users#dashboard'
   end

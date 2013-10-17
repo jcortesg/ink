@@ -20,16 +20,18 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body class="<%= params[:action] %>">
+  <body>
+    <div class="<%= class_body(params["controller"])%>">
       <%= render 'layouts/nav_white' %> 
-    <div class="wrap">
-    <div class="container">
-      <div class="row">
-        <%= yield %>
+      <div class="wrap">
+      <div class="container">
+        <div class="row">
+          <%= yield %>
+        </div>
       </div>
-    </div>
-      
-    </div>
+        
+      </div>
+  </div>
     <%= render 'layouts/footer' %>
     
   </body>
