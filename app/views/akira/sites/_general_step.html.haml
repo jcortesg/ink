@@ -1,36 +1,31 @@
 = f.fields_for :site do |site|
-	.row.head_akira.center
+	.row.center
 		%h3
-			Tu Informacion
-	.stream
-		.row
-			.col-xs-12.col-sm-12.col-md-6.col-lg-6
-				.form-group
-					=site.label :tile, "Titulo"
-					=site.text_field :title , class: "form-control", pleaceholder: "Titulo"
-				.form-group
-					= site.label :slogan
-					= site.text_field :slogan,:pleceholder =>"Ubicacion Actual", :class=>"form-control"	
-				
-				.form-group
-					= f.label :email
-					= f.email_field :email,:pleceholder =>"Ubicacion Actual", :class=>"form-control"		
+			Informacion General
 
-			.col-xs-12.col-sm-12.col-md-6.col-lg-6
-				.form-group
-					=site.label :subdomain, "Subdominio"
-					=site.text_field :subdomain , class: "form-control", pleaceholder: "Subdominio"
-				
-				.form-group
-					= site.label :logo
-					= site.file_field :logo, class: "form-control", :pleceholder =>"Ubicacion Actual"	
-				.form-group
-					=site.label :bg , "Seleciona La imagen de fondo de ti sitio web"
-					= site.file_field :bg,  class: "form-control"
-			
-		.row
-			.col-xs-12.col-sm-12.col-md-12.col-lg-12
-				.form-group
-					= f.label :description , "Sobre ti"
-					=	f.text_area :description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 4
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			.form-group
+				=site.label :tile, "Titulo"
+				=site.text_field :title , class: "form-control", pleaceholder: "Titulo"		
+
+			.form-group
+				= f.label :subdomain , "Nombre de su web"
+				.input-group
+
+					=	f.text_field :subdomain , :pleceholder =>"Username", :class=>"form-control"
+					%span.input-group-addon
+						=".isfamous.co"
+			.form-group
+				= site.label :logo
+				= site.file_field :logo, class: "form-control", :pleceholder =>"Ubicacion Actual"	
+			.form-group
+				=site.label :bg , "Seleciona La imagen de fondo de ti sitio web"
+				= site.file_field :bg,  class: "form-control"
+		
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			.form-group
+				= f.label :description , "Sobre ti"
+				=	f.text_area :description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 4
 

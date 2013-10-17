@@ -1,16 +1,21 @@
-
-%nav.navbar.navbar-default.white
-	%ul.nav.navbar-nav.margin
-		%li	
-			= link_to "HOME" , root_path
-		%li
-			= link_to "PORTAFOLIO" , home_users_path
-		-if current_user
-			%li
-				= link_to "SALIR", destroy_user_session_path, :method =>:DELETE
-		-else
-			%li
-				= link_to "INGRESAR" ,  new_user_session_path  
-			%li
-				= link_to "REGISTRATE" , new_user_registration_path
+%nav.white{:role=>"navigation"}
+	.navbar.navbar-default
+		.navbar-header
+			%span.icon-bar
+			%span.icon-bar
+			= image_tag "isfamous_black.png"
+		.navbar-default.white
+			%ul.nav.navbar-nav.margin.navbar-right
+				%li	
+					= link_to "HOME" , root_path
+				%li
+					= link_to "PORTAFOLIO" , home_users_path
+				-if current_user
+					%li
+						= link_to "SALIR", destroy_user_session_path, :method =>:DELETE
+				-else
+					%li
+						= link_to "INGRESAR" ,  new_user_session_path  
+					%li
+						= link_to "REGISTRATE" , new_user_registration_path
 

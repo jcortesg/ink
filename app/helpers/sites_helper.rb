@@ -5,4 +5,8 @@ module SitesHelper
 			"user_bg"
 		end
 	end
+
+	def bg_site(url)
+		"url(#{url})"
+	end
 end

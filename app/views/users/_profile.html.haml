@@ -16,7 +16,7 @@
 			.modal-body
 				= form_tag akira_user_path(current_user),:multipart => true ,:method => :put  do |f|
 					.img-thumbnail
-						= image_tag current_user.photo
+						= image_tag current_user.photo, :class=>"img_upload"
 					= fields_for :user do |a|
 						.form-group
 							= a.file_field :photo, :class=>"form-control"

@@ -32,6 +32,7 @@ class Akira::ModelsController < ApplicationController
   # PUT /models/1
   # PUT /models/1.json
   def update
+    
     @model = Model.find(params[:id])
 
     respond_to do |format|

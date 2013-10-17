@@ -12,30 +12,8 @@ class Site
   field :bg, type: String
   
   belongs_to :user
-  mount_uploader :bg, ImageUploader
+  mount_uploader :bg, BgUploader
   attr_accessible :bg, :visit, :title, :description, :subdomain, :logo, :slogan
 
-  def current_step
-    @current_step || steps.first
-  end
-
-  def steps
-    %w{general description book jobs}
-  end
-
-  def next_step
-  	self.current_step = steps[steps.index(current_step)+1]
-  end
-  def previous_step
-  	self.current_step = steps[steps.index(current_step)-1]
-  end
-
-  def last_step?
-  	current_step == steps.last
-  end
-
-  def first_step?
-  	current_step == steps.first
-	end
 
 end
