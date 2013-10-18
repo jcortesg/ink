@@ -25,7 +25,7 @@ class Akira::ModelsController < ApplicationController
 
   # GET /models/1/edit
   def edit
-    @model = Model.find(params[:id])
+    @model = User.find(params[:id])
   end
 
 
@@ -33,7 +33,7 @@ class Akira::ModelsController < ApplicationController
   # PUT /models/1.json
   def update
     
-    @model = Model.find(params[:id])
+    @model = User.find(params[:id])
 
     respond_to do |format|
       if @model.update_attributes(params[:model])

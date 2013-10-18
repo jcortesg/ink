@@ -14,12 +14,12 @@
 $gris: #f9f7f2;
 $gray_dark: #dcd9d6;
 
+
+@import "bootstrap.min";
+@import "bootstrap_and_overrides";
 @import "home";
 @import "sites";
 @import "models";
-@import "bootstrap.min";
-@import "bootstrap_and_overrides";
-
 
 
 

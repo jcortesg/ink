@@ -1,0 +1,39 @@
+.row.center
+	%h3
+		Descripción
+
+.row
+	.col-xs-12.col-sm-12.col-md-12.col-lg-12
+		.form-group
+			=f.label :general_description, "Descripcion general"
+			=f.text_area :general_description, class: "form-control", :rows => 4
+	.col-xs-12.col-sm-12.col-md-12.col-lg-12
+		.form-group
+			=f.label :professional_description, "Descripcion Profecional"
+			=f.text_area :professional_description, class: "form-control", :rows => 4
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			=f.label :age, "Edad"
+			=f.number_field :age, class: "form-control",pleaceholder: "Edad"
+
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :talent, "Talento"
+			= f.text_field :talent, class: "form-control", pleaceholder: "Talento"
+.row
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			=f.label :height, "Altura"
+			=f.number_field :height, class: "form-control", pleaceholder: "Altura"
+		.form-group
+			=f.label :chest, "Pecho"
+			=f.number_field :chest, class: "form-control", pleaceholder: "Pecho"
+
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :weight, "Peso"
+			=f.number_field :weight, class: "form-control", pleaceholder: "Peso"
+.row
+	.col-xs-12.col-sm-12.col-md-12.col-lg-12
+		%submit.btn.btn-warning.btn-lg.btn-block.step_nav{:'data-nav'=>"next"}
+			Siguiente

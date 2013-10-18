@@ -1,0 +1,13 @@
+.row.center
+	%h3
+		Descripción
+
+.row
+	.col-xs-12.col-sm-12.col-md-12.col-lg-12
+		.form-group
+			=f.label :general_description, "Descripcion general"
+			=f.text_area :general_description, class: "form-control", :rows => 4
+	.col-xs-12.col-sm-12.col-md-12.col-lg-12
+		.form-group
+			=f.label :professional_description, "Descripcion Profecional"
+			=f.text_area :professional_description, class: "form-control", :rows => 4

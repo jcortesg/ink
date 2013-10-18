@@ -7,9 +7,11 @@
 				%p
 					%h3
 						=@user.name
-					Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+					%hr
+					= @user.general_description
+					%br
+					= @user.professional_description
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
 				%p
-
-					Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
+					= truncate(@user.description, :length => 100)

@@ -7,6 +7,8 @@
 		
 		= link_to "Books", akira_user_books_path(current_user), :class=>"list-group-item"
 
+		= link_to "Salir", destroy_user_session_path, :class=>"list-group-item",:method =>:DELETE
+
 .modal.fade#myPicture{:tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
 	.modal-dialog
 		.modal-content

@@ -12,10 +12,7 @@
 						= user.name
 					%p
 
-						Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenatis egestas. Phasellus bibendum placerat metus, sed molestie magna semper eget….
-						%hr
-	
-
+						=truncate(user.general_description, :length => 150)
 
 :javascript
 
