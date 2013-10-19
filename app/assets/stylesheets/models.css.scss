@@ -36,3 +36,34 @@
 .stream{
 	padding: 20px;
 }
+.social_icon{
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	display: block;
+	margin: 20px;
+	font-size: 24px;
+	padding-top: 24px;
+	font-weight: bold;
+	p{
+		font-size: 1px;
+		color: #585858;
+		font-weight: normal;
+	}
+}
+.face{
+	border: 10px solid $face;
+	color:$face;
+}
+.twiter{
+	border: 10px solid $twitter;
+	color:$twitter;
+}
+.instagram{
+	border: 10px solid $insta;
+	color:$insta;
+}
+.views{
+	border: 10px solid $red ;
+	color:$red;
+}

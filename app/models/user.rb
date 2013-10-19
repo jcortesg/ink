@@ -20,7 +20,6 @@ class User
 
   field :name ,:type => String
   field :lastname, :type => String
-  field :genre, :type =>String
   field :nationality, :type => String
   field :ubication , :type => String
   field :subdomain , :type => String
@@ -42,7 +41,9 @@ class User
 
   ## Rememberable
   field :remember_created_at, :type => Time
-
+  field :ubication ,:type => String
+  field :address, :type => String
+  field :tel, :type => Integer
   ## Trackable
   field :sign_in_count,      :type => Integer, :default => 0
   field :current_sign_in_at, :type => Time
@@ -97,8 +98,8 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :profetion_description,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
-                  :remember_me, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
+  attr_accessible :profetion_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
+                  :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid
     self.subdomain = self.subdomain.downcase! if attribute_present?("sundomain")

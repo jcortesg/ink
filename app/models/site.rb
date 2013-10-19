@@ -10,10 +10,11 @@ class Site
   field	:logo, type: String
   field	:slogan, type: String
   field :bg, type: String
+  field :contact, type: String 
   
   belongs_to :user
   mount_uploader :bg, BgUploader
-  attr_accessible :bg, :visit, :title, :description, :subdomain, :logo, :slogan
+  attr_accessible :contact, :bg, :visit, :title, :description, :subdomain, :logo, :slogan
 
 
 end

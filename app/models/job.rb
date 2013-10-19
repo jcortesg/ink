@@ -4,4 +4,6 @@ class Job
   field :description, type: String
   field :date_end, type: String
   field :status, type: String
+
+  belongs_to :agent
 end

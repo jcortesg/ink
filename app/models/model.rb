@@ -13,8 +13,10 @@ class Model < User
   field	:lastname , type: String
   field :type , type: String
   field :age, type: Integer
+  field :genre, :type =>String
+  field :nationality, :type => String
 
 
-  attr_accessible :height , :chest , :waist,:hip,:talent,:weight,:languages ,
+  attr_accessible :nationality,:genre,:height , :chest , :waist,:hip,:talent,:weight,:languages ,
                   :description ,:birthday ,:firstname , :lastname, :age
 end

@@ -1,13 +1,13 @@
 .row.head_akira.center
 	.col-xs-3.col-sm-3.col-md-3.col-lg-3
 		%h1.lead
-			Mi Perfil
+			= link_to "Mi Perfil", root_path
 	.col-xs-3.col-sm-3.col-md-3.col-lg-3
 		%h1.lead
 			Mis Ofertas
 	.col-xs-3.col-sm-3.col-md-3.col-lg-3
 		%h1.lead
-			Mis Books
+			= link_to "Mis Portafolios", akira_user_books_path(current_user)
 	.col-xs-3.col-sm-3.col-md-3.col-lg-3
 		%h1.lead
-			Mi Sitio
+			= link_to "Mi Sitio", root_url(:subdomain => current_user.subdomain)

@@ -1,22 +1,31 @@
 .col-xs-12.col-sm-12.col-md-9.col-lg-9
 	=render 'akira/partials/nav_profile'
 	.row.head_akira
+
 		.col-xs-12.col-sm-12.col-md-12.col-lg-12
 			.row
-				.statics
-					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
-						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
-						Facebook
-					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
-						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
-						Twitter
+				.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+					.social_icon.img-circle.face
+						0
+						%p
+							Facebook
+					
+				.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+					.social_icon.img-circle.twiter
+						0
+						%p
+							Twitter
 
-					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
-						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
-						Visitas
-					.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
-						= image_tag "http://placehold.it/150x150",:class=>"img-circle"
-						Instagram
+				.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+					.social_icon.img-circle.instagram
+						0
+						%p
+							Instagram
+				.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
+					.social_icon.img-circle.views
+						0
+						%p
+							Visitas
 	.row
 		.col-xs-12.col-sm-12.col-md-12.col-lg-12.nav_event
 			.lead
