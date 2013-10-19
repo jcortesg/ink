@@ -18,11 +18,27 @@ $twitter: #82b2e1;
 $insta: #547197 ;
 $red: #e78d8c;
 
+
+
+@font-face {
+  font-family: 'fontello';
+  src: url('font/fontello.eot?12421085');
+  src: url('font/fontello.eot?12421085#iefix') format('embedded-opentype'),
+       url('font/fontello.woff?12421085') format('woff'),
+       url('font/fontello.ttf?12421085') format('truetype'),
+       url('font/fontello.svg?12421085#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @import "bootstrap.min";
 @import "bootstrap_and_overrides";
+@import "fontello";
 @import "home";
 @import "sites";
 @import "models";
+
 
 
 

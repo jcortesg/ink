@@ -91,7 +91,18 @@ footer{
 .info{
 	margin-top: 10px
 }
+.sing_up{
+	margin: 70px 0px ;
+	.form{
+		border-right: 1px solid $gray_dark;
+	}
+	[class^="icon-"]{
+		float: left;
+		margin: 0px 15px;
+		border-right: 1px solid;
+	}
 
+}
 .item_portfolio{
 	color: #000;
 	a{
@@ -99,4 +110,14 @@ footer{
 
 		}
 	}
+}
+
+.btn-face{
+	color: #fff;
+	background-color: $face;
+	border-color: $face;
+	&:hover{
+		color: #fff;
+		background-color: #5475AF;
+	};
 }

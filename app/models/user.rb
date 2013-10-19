@@ -50,7 +50,7 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
-  
+  field :_type, :type => String, :default => "Model"
   ##picture
 
   field :photo, :type => String
@@ -83,18 +83,18 @@ class User
   accepts_nested_attributes_for :site
 
   ##validate
-  validates_presence_of :name ,:_type
+  validates_presence_of :name 
   validates_presence_of :email
   validates_presence_of :encrypted_password
-  validates_presence_of :description
+  #validates_presence_of :description
 
   mount_uploader :photo, ImageUploader
   #validate subdomain
 
-  validates_presence_of :subdomain
-  validates_uniqueness_of :subdomain
-  validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
-  validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/
+  #validates_presence_of :subdomain
+  #validates_uniqueness_of :subdomain
+  #validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
+  #validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/
 
   #attributes accessibles
 
