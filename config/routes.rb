@@ -6,7 +6,7 @@ Models::Application.routes.draw do
   authenticated :user do
     root :to => 'users#dashboard'
   end
-  devise_for :users , path_names: { sign_in: "login", sign_out: "logout"}
+  devise_for :users , path_names: { sign_in: "login", sign_out: "logout"} ,controllers: {omniauth_callbacks: "omniauth_callbacks"}
   
  scope :module => 'site', :constraints => { :subdomain => /.+/ } do
     root :to =>'sites#show'

@@ -15,3 +15,10 @@
 //= require twitter/bootstrap
 //= require_tree .
 
+
+	$(function(){
+		$("#model_ubication").geocomplete({
+      details: "form",
+      types: ["geocode", "establishment"]
+     });
+	});

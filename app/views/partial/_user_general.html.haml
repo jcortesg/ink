@@ -1,6 +1,17 @@
 .row
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
+			= f.label :_type, "Selecione el tipo de Usuario"
+			= f.select :_type ,options_for_select([["Profesional", "Professional"],["Compañia o Agencia", "Agent"], ["Modelo", "Model"]]),{},:class=>"form-control"
+
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			=f.label :specialty, "¿Como desea mostrar el nombre de su profesion?"
+			= f.text_field :specialty, :pleceholder =>"Nombre", :class=>"form-control"
+
+.row
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
 			= f.label :name, "Nombre"
 			= f.text_field :name, :pleceholder =>"Nombre", :class=>"form-control"
 
@@ -52,4 +63,5 @@
 	
 
 
+	
 

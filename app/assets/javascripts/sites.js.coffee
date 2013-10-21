@@ -4,6 +4,7 @@
 
 
 $(document).ready ->
+	
 	page = $("#edit_user").children(".page")
 	totalPage = page.length
 	count = 0
@@ -19,7 +20,7 @@ $(document).ready ->
 			count = 3
 			$(this).addClass("hidden")
 		page.addClass("hidden").eq(count).removeClass("hidden")
-		console.log count
+		
 	
 
 

@@ -9,11 +9,11 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable ,
+  devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
-  field :email,              :type => String
+  field :email,              :type => String , :default =>""
   field :encrypted_password, :type => String
 
   ##Personaldata
@@ -30,8 +30,13 @@ class User
   field :cel, :type => Integer
   field :_type, :type => String
   field :active, :type => Boolean, :default => false
+  
+  ##Social data
+  field :tw, :type => String
+  field :provider, :type => String
 
   ## Site Data
+  field :specialty, :type => String
   field :general_description , :type => String
   field :professional_description , :type => String 
   
@@ -58,6 +63,7 @@ class User
 
   has_many :books
   has_one :site 
+  embeds_many :networks
 
   
 
@@ -98,10 +104,57 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :profetion_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
+  attr_accessible :tw, :profetion_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid
     self.subdomain = self.subdomain.downcase! if attribute_present?("sundomain")
   end
+
+
+
+  def self.find_for_oauth(auth, signed_in_resource=nil)
+    if auth.provider == "twitter"
+      user = User.where(tw: auth.uid).first
+      p "Twitter oauth"
+    else
+      user = User.where(email: auth.info.email).first
+    end
+
+    unless user
+      if auth.provider == "twitter"
+        user = User.create!(
+          name: auth.info.name,
+          password:Devise.friendly_token[0,20]
+          )
+      else
+        user = User.create!(
+          name: auth.info.name,
+          email: auth.info.email,
+          password:Devise.friendly_token[0,20]
+          )
+      end
+      
+    end
+    user
+  end
+
+    def self.new_with_session(params, session)
+      if session["devise.user_attributes"]
+        new(session["devise.user_attributes"], without_protection: true) do |user|
+        user.attributes = params
+      user.valid?
+      end
+      else
+        super
+      end
+    end
+
+def password_required?
+  super && provider.blank?
+end
+def email_required?
+  super && provider.blank?
+end
+
 end
