@@ -17,7 +17,7 @@
 
 		.form-group
 			= f.label :genre, "Genero"
-			=	f.text_field :genre, :placeholder =>"Genero", :class=>"form-control"
+			= f.select :genre ,options_for_select([["Femenino", "female"],["Masculino", "male"]],@model.genre),{},:class=>"form-control"
 
 		.form-group
 			=f.label :birthday , "Fecha de Nacimiento"
@@ -33,7 +33,7 @@
 			.input-group
 				=	f.text_field :subdomain , :pleceholder =>"Username", :class=>"form-control"
 				%span.input-group-addon
-					=".dominio.com"
+					=".sfamous.co"
 		.form-group
 			= f.label :nationality,"Lugar de nacimiento"
 			= f.text_field :nationality, :pleceholder => "Lugar de nacimiento", :class=>"form-control"
@@ -64,4 +64,3 @@
 
 
 	
-

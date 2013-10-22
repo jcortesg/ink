@@ -104,7 +104,7 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :tw, :profetion_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
+  attr_accessible :tw,:provider, :profetion_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid
@@ -114,28 +114,16 @@ class User
 
 
   def self.find_for_oauth(auth, signed_in_resource=nil)
-    if auth.provider == "twitter"
-      user = User.where(tw: auth.uid).first
-      p "Twitter oauth"
-    else
-      user = User.where(email: auth.info.email).first
+    user = User.where(email: auth.info.email).first
+    unless user
+      user = User.create!(
+        name: auth.info.name,
+        email: auth.info.email,
+        password:Devise.friendly_token[0,20],
+        provider:auth.provider
+        )
     end
 
-    unless user
-      if auth.provider == "twitter"
-        user = User.create!(
-          name: auth.info.name,
-          password:Devise.friendly_token[0,20]
-          )
-      else
-        user = User.create!(
-          name: auth.info.name,
-          email: auth.info.email,
-          password:Devise.friendly_token[0,20]
-          )
-      end
-      
-    end
     user
   end
 
@@ -149,12 +137,5 @@ class User
         super
       end
     end
-
-def password_required?
-  super && provider.blank?
-end
-def email_required?
-  super && provider.blank?
-end
 
 end

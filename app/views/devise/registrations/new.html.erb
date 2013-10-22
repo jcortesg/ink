@@ -36,13 +36,14 @@
       <%= link_to user_omniauth_authorize_path(:facebook), :class=>"btn btn-face btn-lg btn-block" do %>
         <span class="icon-facebook"></span> Crea tu cuenta con Facebook
       <% end -%>
-            <%= link_to user_omniauth_authorize_path(:twitter), :class=>"btn btn-info btn-lg btn-block" do %>
+    <!--
+      <%= link_to user_omniauth_authorize_path(:twitter), :class=>"btn btn-info btn-lg btn-block" do %>
         <span class="icon-twitter"></span> Crea tu cuenta  Twitter
       <% end -%>
-      <button type="button" class="btn btn-danger  btn-lg btn-block">
+    -->
+      <%= link_to user_omniauth_authorize_path(:google_oauth2), :class=>"btn btn-danger btn-lg btn-block" do %>
         <span class="icon-gplus"></span> Crea tu cuenta con Google</button>
-      
-
+      <% end -%>
 
     </div>
   </div>

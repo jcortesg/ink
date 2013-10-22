@@ -216,6 +216,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
    config.omniauth :facebook, '664941260197265', '51198a1d983a77d5995eeca0a4de5875'
    config.omniauth :twitter, 'WpBAal6WGPvrc3CqzByJ0Q', 'upxJZ3IRNG2c8scq759qDKI6ABu8CiLqiJTcUR186s'
+   config.omniauth :google_oauth2, '535482363411.apps.googleusercontent.com', 'HT235rPJzYdu3LMPSIIMPAr6'
 
 
   # ==> Warden configuration
