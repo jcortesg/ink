@@ -2,61 +2,98 @@
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
 			= f.label :_type, "Selecione el tipo de Usuario"
-			= f.select :_type ,options_for_select([["Profesional", "Professional"],["Compañia o Agencia", "Agent"], ["Modelo", "Model"]]),{},:class=>"form-control"
+			= f.select :_type ,options_for_select([["Profesional", "Professional"],["Compañia o Agencia", "Agent"], ["Modelo", "Model"]],@model._type),{},:class=>"form-control"
+
 
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
+
 			=f.label :specialty, "¿Como desea mostrar el nombre de su profesion?"
 			= f.text_field :specialty, :pleceholder =>"Nombre", :class=>"form-control"
 
 .row
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
-			= f.label :name, "Nombre"
+			= f.label :name, "Nombre para mostrar"
 			= f.text_field :name, :pleceholder =>"Nombre", :class=>"form-control"
 
 		.form-group
 			= f.label :genre, "Genero"
 			= f.select :genre ,options_for_select([["Femenino", "female"],["Masculino", "male"]],@model.genre),{},:class=>"form-control"
+		.form-group
+			= f.label :twitter, "Usuario de twitter"
+			.input-group
+				%span.input-group-addon.icon-twitter
+				= f.text_field :twitter, :pleceholder =>"@username",:class=>"form-control"
+		.form-group
+			= f.label :instagram, "Usuario instagram"
+			.input-group
+				%span.input-group-addon.icon-instagramm
+				= f.text_field :instagram,:class=>"form-control"
+	
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 
 		.form-group
-			=f.label :birthday , "Fecha de Nacimiento"
-			%div
-				= f.date_select :birthday, {},{:class=>"form-control select_date"}
-	
+			= f.label :ubication, "Ubicacion Actual"
+			= f.text_field :ubication, :pleceholder =>"Ubicacion Actual", :class=>"form-control"
+		.form-group
+			= f.label :subdomain , "Nombre para tu web"
+			.input-group
+				=	f.text_field :subdomain , :pleceholder =>"Username", :class=>"form-control"
+				%span.input-group-addon
+					=".isfamous.co"
+		.form-group
+			= f.label :twitter, "Fanpage Facebook"
+			.input-group
+				%span.input-group-addon.icon-facebook
+				= f.text_field :facebook,:class=>"form-control"
+		.form-group
+			= f.label :google, "Usuario Google+"
+			.input-group
+				%span.input-group-addon.icon-gplus
+				= f.text_field :google,:class=>"form-control"
+
+
+.center
+	%h3
+		Informacion Personal
+	%hr
+	%br
+
+.row
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :firstname, "Nombre"
+			= f.text_field :firstname, :pleceholder =>"Nombre", :class=>"form-control"
+
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
 			= f.label :lastname, "Apellidos"
 			=	f.text_field :lastname, :pleceholder =>"Apellido", :class=>"form-control"
 		.form-group
-			= f.label :subdomain , "Username"
-			.input-group
-				=	f.text_field :subdomain , :pleceholder =>"Username", :class=>"form-control"
-				%span.input-group-addon
-					=".sfamous.co"
-		.form-group
 			= f.label :nationality,"Lugar de nacimiento"
 			= f.text_field :nationality, :pleceholder => "Lugar de nacimiento", :class=>"form-control"
 
-
 .form-group
-	= f.label :description , "Sobre ti"
-	=	f.text_area :description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 5
+	= f.label :general_description , "Sobre ti"
+	=	f.text_area :general_description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 5
+.form-group
+	= f.label :professional_description , "Sobre tu experiencia profecional"
+	=	f.text_area :professional_description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 5
+
+
 .row
 	%h3
 		Contacto
+	%hr
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			= f.label :email
-			= f.email_field :email,:pleceholder =>"Ubicacion Actual", :class=>"form-control"
+
 		.form-group
 			= f.label :tel, "Telefono"
 			= f.number_field :tel, :pleceholder =>"Telefono", :class=>"form-control"
 
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			= f.label :ubication, "Ubicacion Actual"
-			= f.text_field :ubication, :pleceholder =>"Ubicacion Actual", :class=>"form-control"
+
 		.form-group
 			= f.label :address, "Direccion"
 			= f.text_field :address,:pleceholder =>"Direccion", :class=>"form-control"

@@ -1,7 +1,10 @@
 .col-xs-12.col-sm-12.col-md-9.col-lg-9
-	.row.head_akira.center
+	=render 'akira/partials/nav_profile'
+	%br
+	.center
 		%h3
 			Crear un nuevo portafolio
+		%hr
 
 	.stream
 		= form_for @book , :url => akira_user_books_path(current_user) do |f|

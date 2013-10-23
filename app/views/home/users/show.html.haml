@@ -1,17 +1,25 @@
 #container
 	.row
-		%article.item_portfolio.col-sm-12.col-md-8.col-lg-8
-			.portfolio
-				%figure.center
-					= image_tag @user.photo
-				%p
-					%h3
-						=@user.name
-					%hr
-					= @user.general_description
-					%br
-					= @user.professional_description
+		.col-sm-12.col-md-8.col-lg-8
+			%article.item_portfolio.col-sm-12.col-md-12.col-lg-12
+				.portfolio
+					%figure.center
+						= image_tag @user.photo
+			.col-sm-12.col-md-12.col-lg-12
+				.portfolio
+					%p
+						%h3
+							=@user.name
+						%span.icon-direction
+							=@user.ubication
+						|
+						%span.icon-briefcase
+							=@user.specialty
+						%hr
+						= @user.general_description
+						%br
+						= @user.professional_description
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
-				%p
-					= truncate(@user.description, :length => 100)
+				%h4
+					Tags

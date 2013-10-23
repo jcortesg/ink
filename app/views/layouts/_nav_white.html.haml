@@ -3,13 +3,15 @@
 		.navbar-header
 			%span.icon-bar
 			%span.icon-bar
-			= image_tag "isfamous_black.png"
+			= link_to image_tag("isfamous_black.png"),root_path
 		.navbar-default.white
 			%ul.nav.navbar-nav.margin.navbar-right
 				%li	
 					= link_to "HOME" , root_path
 				%li
-					= link_to "PORTAFOLIO" , home_users_path
+					= link_to "PORTAFOLIOS" , home_users_path
+				%li
+					= link_to "CASTINGS" , home_jobs_path
 				-if current_user
 					%li
 						= link_to "SALIR", destroy_user_session_path, :method =>:DELETE

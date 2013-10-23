@@ -43,9 +43,9 @@
                 %p.text-muted
                   %small
                     %em
-                      (Model/product)
+                      ="(#{user.specialty})"
                     %br
-                    Cali/Colombia
+                    = user.ubication
                 = link_to "Ver Perfil", home_user_path(user), :class=>"ver"
 %section.info.container
   .row
@@ -53,27 +53,30 @@
       %h3
         Audiciones & Trabajos destacados
       %hr.gray
-    .col-xs-12.col-sm-6.col-md-6.col-lg-6.famous_list
-      .media
-        %a.pull-left
-          %picture
-            = image_tag ("lion.jpg")
-        .media-body
-          %h4.media-heading
-            Comercial Para TOYOTA
-          %p
-            Se grabara Een Miami,+ 2000 Dolares, Principios de novenbre, Actores con visa vigente, MUJERES 18-22, 20-25, 40-45, 60-65; HOMBRES 45-50, 30-35, 22-27, 10-12
+    - @jobs.each do |job|
+      .col-xs-12.col-sm-6.col-md-6.col-lg-6.famous_list
+        .media
+          %a.pull-left
+            %picture
+              = image_tag (job.agent.photo)
+          .media-body
+            %h4.media-heading
+              = link_to job.name, home_job_path(job)
+            %p.text-muted
+              %small
+                %span.icon-direction
+                %em
+                  ="#{job.ubication}"
+              |
+              %small
+                %span.icon-calendar
+                %em
+                  ="#{job.date_end}"
+            %p
+              = truncate(job.description, :length => 100)
+              = link_to "Aplicar", home_job_path(job)
 
-    .col-xs-12.col-sm-6.col-md-6.col-lg-6.famous_list
-      .media
-        %a.pull-left
-          %picture
-            = image_tag ("lion.jpg")
-        .media-body
-          %h4.media-heading
-            Alfred Hitchcock
-          %p
-            Seguimos en la busqueda de el doble de Alfred Hitchcock
+
 
 
 

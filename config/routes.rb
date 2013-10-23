@@ -1,7 +1,5 @@
 Models::Application.routes.draw do
   
-  resources :jobs
-
 
   authenticated :user do
     root :to => 'users#dashboard'
@@ -29,12 +27,15 @@ Models::Application.routes.draw do
       end
       resources :books
       resources :sites
+      resources :jobs
     end
   end
 
   namespace :home do
+    resources :jobs
     resources :sites
     resources :users, only: [:index, :show ]
+    
   end
 
   root :to => "home#index"

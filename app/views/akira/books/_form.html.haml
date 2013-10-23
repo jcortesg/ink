@@ -1,33 +1,46 @@
+
 -if @book.errors.any?
-  #error_explanation
-    %h2 
-      =pluralize(@book.errors.count, "error") 
-      prohibited this book from being saved:
-    %ul
-      -@book.errors.full_messages.each do |msg|
-        %li
-          = msg
+	#error_explanation
+		%h2 
+			=pluralize(@book.errors.count, "error") 
+		pluralizerohibited this book from being saved:
+		%ul
+			-@book.errors.full_messages.each do |msg|
+				%li
+					= msg
 
+.row
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :name ,"Nombre"
+			= f.text_field :name ,:class=>"form-control"
+		.form-group
+			= f.label :description 
+			= f.text_field :description ,:class=>"form-control"
+	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+		.form-group
+			= f.label :localitation  
+			.input-group
+				%span.input-group-addon.icon-direction
+				= f.text_field :localitation ,:class=>"form-control"
+		.form-group
+			= f.label :photographer  
+			= f.text_field :photographer ,:class=>"form-control"
 
-= f.label :name 
-= f.text_field :name 
+	.col-xs-12.col-sm-12.col-md-12.col-lg-12
+		%hr
+		.form-group
 
-= f.label :description 
-= f.text_field :description 
+			=f.label :front, "Portada"
+			=	f.file_field :front,:class=>"form-control"
+			%hr
+			=f.label :picture, "Fotos"
+.row
 
-= f.label :localitation  
-= f.text_field :localitation 
+	= f.fields_for :pictures do |picture| 
+		.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			= picture.file_field :url ,:class=>"form-control"
+			%br
+	.col-xs-12.col-sm-12.col-md-4.col-lg-4.pull-right
+		= f.submit "Guardar", :class =>"btn btn-info btn-lg btn-block"
 
-= f.label :photographer    
-= f.text_field :photographer 
-%hr
-=f.label :front
-=	f.file_field :front
-%hr
-= f.fields_for :pictures do |picture| 
-  = picture.file_field :url 
-
-
-= f.submit 
-
-hola

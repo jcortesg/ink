@@ -1,0 +1,31 @@
+.col-sm-12.col-md-9.col-lg-9
+	=render 'akira/partials/nav_profile'
+	%br
+	.center
+		%h3
+			Crear oferta 
+		%hr
+	.stream
+		= form_for @job , :url => akira_user_jobs_path(current_user) do |f|
+			.row
+				.col-xs-12.col-sm-12.col-md-6.col-lg-6
+					.form-group
+						=f.label :name ,"Titulo"
+						= f.text_field :name, :class =>"form-control"
+					.form-group
+						=f.label :ubication, "Ubicacion"
+						= f.text_field :ubication, :class =>"form-control"
+				.col-xs-12.col-sm-12.col-md-6.col-lg-6
+					.form-group
+						= f.label :address, "Direccion"
+						= f.text_field :address, :class =>"form-control"
+					.form-group
+						= f.label :picture, "Imagen"
+						= f.file_field :picture, :class => "form-control"
+			.col-xs-12.col-sm-12.col-md-12.col-lg-12
+				.form-group
+					= f.label :description, "Descripcion"
+					=f.text_area :description, :class => "form-control", :rows => 4
+
+			.col-xs-12.col-sm-12.col-md-4.col-lg-4.pull-right
+				= f.submit "Guardar", :class =>"btn btn-info btn-lg btn-block"

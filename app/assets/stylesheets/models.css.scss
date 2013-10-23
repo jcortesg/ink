@@ -35,6 +35,12 @@
 }
 .stream{
 	padding: 20px;
+	.media{
+		img{
+			max-width: 100px;
+			max-height: 100px;
+		}
+	}
 }
 .social_icon{
 	width: 120px;
@@ -47,7 +53,6 @@
 	font-weight: bold;
 	p{
 		font-size: 15px;
-		color: #585858;
 		font-weight: normal;
 	}
 }
@@ -66,4 +71,9 @@
 .views{
 	border: 10px solid $red ;
 	color:$red;
+}
+
+.img-job{
+	margin: 0px 20px 20px;
+	max-width: 230px;
 }

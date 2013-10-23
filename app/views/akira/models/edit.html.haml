@@ -1,9 +1,12 @@
 = form_for(@model, :url => akira_model_path(@model),:as => :model) do |f|
 	
 	.col-xs-12.col-sm-12.col-md-9.col-lg-9
-		.row.head_akira.center
+		=render 'akira/partials/nav_profile'
+		%br
+		.center
 			%h3
-				Informacion Personal
+				Informacion General
+			%hr
 		%br
 		= render "partial/user_general" , f: f 
 

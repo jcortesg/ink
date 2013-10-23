@@ -19,6 +19,7 @@ class User
   ##Personaldata
 
   field :name ,:type => String
+  field :firstname, :type => String
   field :lastname, :type => String
   field :nationality, :type => String
   field :ubication , :type => String
@@ -34,7 +35,10 @@ class User
   ##Social data
   field :tw, :type => String
   field :provider, :type => String
-
+  field :facebook, :type => String
+  field :twitter, :type => String
+  field :google, :type => String
+  field :instagram, :type => String
   ## Site Data
   field :specialty, :type => String
   field :general_description , :type => String
@@ -46,7 +50,6 @@ class User
 
   ## Rememberable
   field :remember_created_at, :type => Time
-  field :ubication ,:type => String
   field :address, :type => String
   field :tel, :type => Integer
   ## Trackable
@@ -64,6 +67,7 @@ class User
   has_many :books
   has_one :site 
   embeds_many :networks
+  
 
   
 
@@ -104,7 +108,7 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :tw,:provider, :profetion_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
+  attr_accessible :instagram,:google,:twitter,:facebook,:specialty,:firstname,:tw,:provider, :professional_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid

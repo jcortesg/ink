@@ -1,9 +1,13 @@
 .col-sm-12.col-md-9.col-lg-9
-	.row.head_akira.center
+	=render 'akira/partials/nav_profile'
+	%br
+	.center
 		%h3
 			Portafolios
+		%hr
 	.stream
-		= link_to "Nuevo book ", new_akira_user_book_path(current_user), :class=>"btn btn-success pull-right"
+		= link_to "Nuevo book ", new_akira_user_book_path(current_user), :class=>"btn btn-info pull-right"
+
 		
 		.row
 			#container

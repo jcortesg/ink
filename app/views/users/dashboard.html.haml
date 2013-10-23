@@ -23,23 +23,28 @@
 							Instagram
 				.col-xs-3.col-sm-3.col-md-3.col-lg-3.center
 					.social_icon.img-circle.views
-						%span.icon-users-1
+						%span.icon-chart
 						%p
 							Visitas
 	.row
 		.col-xs-12.col-sm-12.col-md-12.col-lg-12.nav_event
-			.lead
-				Eventos
+		
 	.row
 		.col-xs-12.col-sm-12.col-md-12.col-lg-12.stream
 			.media
 				.pull-left
-					= image_tag "http://placehold.it/100x100",:class=>"img-circle media-object"
+					= image_tag "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/c54.0.260.260/s160x160/1381706_613702502021168_1701884661_n.jpg",:class=>"img-circle media-object"
 				.media-body
 					.media-heading
 						%h4
-							Hala k ase
-					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+							Bienvenido a IsFamous
+							%small.pull-right
+								=@user.created_at.to_date.to_formatted_s(:rfc822) 
+						%p
+							Apartir de este momento podras disfrutar de todos los veneficios que te brindamos por pertenecer a nuestra comunidad.
+							%br
+							Te invitamos a crear tu web y mostarrle al mundo lo importate que eres.
+							
 
 
 

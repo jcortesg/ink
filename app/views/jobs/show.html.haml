@@ -1,0 +1,55 @@
+.row
+  .col-sm-12.col-md-8.col-lg-8
+    %article.item_portfolio
+      .portfolio
+        .media
+          .pull-left
+            = image_tag @job.picture, :class=>"img-jobs"
+          .media-body
+            .media-heading
+              %h4
+                Comercial Para TOYOTA
+              %p
+                %small
+                  %span.icon-direction
+                    = @job.ubication
+                  |
+                  %span.icon-calendar
+                    = @job.date_end
+              %p
+                = @job.description
+    .row
+      .col-sm-12.col-md-12.col-lg-12
+        .portfolio
+          %h3.lead
+            Comentarios
+  %article.col-sm-12.col-md-4.col-lg-4
+    .item_portfolio.col-sm-12.col-md-12.col-lg-12
+      .portfolio
+        %h3
+          Organiza
+        .row
+          .col-sm-12.col-md-5.col-lg-5
+            = image_tag @job.agent.photo, :class=>"img-profile"
+          .col-sm-12.col-md-7.col-lg-7
+            %h4
+              = @job.agent.name
+            %span.icon-briefcase
+              =@job.agent.specialty
+            %br
+            %span.icon-direction
+              =@job.agent.ubication
+            %br
+            %span.icon-upload-cloud-outline
+              ="#{@job.agent.subdomain}.isfamous.co"
+    .item_portfolio.col-sm-12.col-md-12.col-lg-12
+      .portfolio
+        %h4
+          Categorias
+
+    .item_portfolio.col-sm-12.col-md-12.col-lg-12
+      .portfolio
+        %h4
+          Mas Ofertas
+
+          

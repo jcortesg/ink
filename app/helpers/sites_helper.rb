@@ -3,10 +3,14 @@ module SitesHelper
 		case type
 		when "home/users"
 			"user_bg"
+		when "home/jobs"
+			"user_bg"
 		end
 	end
 
 	def bg_site(url)
 		"url(#{url})"
 	end
+
+
 end

@@ -1,0 +1,34 @@
+.col-sm-12.col-md-9.col-lg-9
+	=render 'akira/partials/nav_profile'
+	%br
+	.center
+		%h3
+			Ofertas
+		%hr
+		.pull-right
+			= link_to "Crear Oferta" , new_akira_user_job_path(current_user), :class =>"btn btn-info pull-right"
+	.stream
+
+		-@jobs.each do |job|
+			.media
+				.pull-left
+					= image_tag ("http://placehold.it/150x150")
+				.media-body
+					%h4
+						=job.name
+					%p
+						%small
+							%span.icon-direction
+								= job.ubication
+							|
+							%span.icon-calendar
+								= job.date_end
+					%p
+						=job.description
+			.text-right
+				%span.icon-pencil
+					= link_to "Editar" , edit_akira_user_job_path(current_user ,job)
+					|
+				%span.icon-zoom-in
+					= link_to "Ver mas" , akira_user_job_path(current_user ,job)
+			%hr
