@@ -1,6 +1,5 @@
 module UrlHelper
 
-
   def with_subdomain(subdomain)
     subdomain = (subdomain || "")
     subdomain += "." unless subdomain.empty?

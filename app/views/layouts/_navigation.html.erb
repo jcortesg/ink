@@ -17,7 +17,7 @@
         </li>
       <% else %>
         <li>
-        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to "INGRESAR" ,  "login", :"data-toggle"=>"modal" %>
         </li>
       <% end %>
       <% if user_signed_in? %>

@@ -39,6 +39,9 @@ class User
   field :twitter, :type => String
   field :google, :type => String
   field :instagram, :type => String
+  
+  ## flag for profile
+  field :check, :type => Boolean
   ## Site Data
   field :specialty, :type => String
   field :general_description , :type => String
@@ -58,7 +61,7 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
-  field :_type, :type => String, :default => "Model"
+  field :_type, :type => String, :default => "none"
   ##picture
 
   field :photo, :type => String
@@ -108,7 +111,7 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :instagram,:google,:twitter,:facebook,:specialty,:firstname,:tw,:provider, :professional_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
+  attr_accessible :check,:instagram,:google,:twitter,:facebook,:specialty,:firstname,:tw,:provider, :professional_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid

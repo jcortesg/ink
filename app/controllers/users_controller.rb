@@ -2,17 +2,12 @@ class UsersController < ApplicationController
   
   def dashboard
     @user = current_user
-    if !@user.subdomain
-      redirect_to edit_akira_model_path(@user)
-    else
       if @user.site
         @site = @user.site
       else
         @user.site = Site.new
       end
       render layout: "akira"
-    end
-
   end
 
 
