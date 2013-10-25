@@ -41,7 +41,7 @@ class User
   field :instagram, :type => String
   
   ## flag for profile
-  field :check, :type => Boolean
+  field :check, :type => Boolean, :default => false
   ## Site Data
   field :specialty, :type => String
   field :general_description , :type => String
@@ -61,13 +61,15 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
-  field :_type, :type => String, :default => "none"
+  field :_type, :type => String, :default => "Model"
+
   ##picture
 
   field :photo, :type => String
   ##relations
 
   has_many :books
+  has_many  :tags
   has_one :site 
   embeds_many :networks
   

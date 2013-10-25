@@ -25,6 +25,7 @@ Models::Application.routes.draw do
       collection do
         get 'dashboard'
       end
+      put 'check'
       resources :books
       resources :sites
       resources :jobs

@@ -34,24 +34,27 @@
     </div>
     <%= render 'layouts/footer' %>
     
-    <% if current_user._type == "none" %>
+    <% if !current_user.check %>
 
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
         
           <div class="modal-body">
-            <%=form_for(current_user, :url => akira_model_path(current_user),:as => :model) do |f|%>
+            <%=form_for(current_user, :url =>  akira_user_check_path(current_user),:as => :model) do |f|%>
                 <div class="form-group">
                    <%= f.label :_type, "Selecione el tipo de Usuario"%>  
                     <%= f.select :_type ,options_for_select([["Profesional", "Professional"],["Compañia o Agencia", "Agent"], ["Modelo", "Model"]],current_user._type),{},:class=>"form-control input-lg" %>
+                    <%= f.hidden_field :check, :value=> true %>
                 </div>
      
-            <% end -%>
+         
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-info  btn-lg">Guardar</button>
+            <%= f.submit "Guardar", :class=>"btn btn-info btn-lg"%>
+            
           </div>
+        <% end -%>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->

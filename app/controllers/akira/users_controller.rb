@@ -37,6 +37,22 @@ class Akira::UsersController < ApplicationController
     
   end
 
+
+  def check
+    @user = User.find(params[:user_id])
+
+    respond_to do |format|
+      if @user.update_attributes!(params[:model])
+        format.html { redirect_to root_path, notice: 'Model was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @model.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   def update
     @model = User.find(params[:id])
 
