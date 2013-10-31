@@ -1,5 +1,5 @@
 .col-xs-6.col-sm-6.col-md-9.col-lg-9
-		=render 'akira/partials/nav_profile'
+	=render 'akira/partials/nav_profile'
 	%br
 	.center
 		%h3
@@ -10,9 +10,6 @@
 
 		%block
 			=link_to "Editar",  edit_akira_user_book_path(current_user, @book), :class=>"btn btn-success pull-right"
-
-
-
 		%p
 			= @book.description 
 		.row
@@ -20,4 +17,4 @@
 				-@book.pictures.each do |f|
 					.col-sm-12.col-md-4.col-lg-4.item_
 						.thumbnai.center
-							= image_tag f.url
+							= image_tag f.url_url(:thumb)

@@ -5,34 +5,61 @@
 .row
 	.col-xs-12.col-sm-12.col-md-12.col-lg-12
 		.form-group
-			=f.label :general_description, "Descripcion general"
-			=f.text_area :general_description, class: "form-control", :rows => 4
-	.col-xs-12.col-sm-12.col-md-12.col-lg-12
-		.form-group
-			=f.label :professional_description, "Descripcion Profecional"
+			=f.label :professional_description, "Descripcion Profesional"
 			=f.text_area :professional_description, class: "form-control", :rows => 4
-	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			=f.label :age, "Edad"
-			=f.number_field :age, class: "form-control",pleaceholder: "Edad"
-
-	.col-xs-12.col-sm-12.col-md-6.col-lg-6
-		.form-group
-			= f.label :talent, "Talento"
-			= f.text_field :talent, class: "form-control", pleaceholder: "Talento"
 .row
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		.form-group
-			=f.label :height, "Altura"
-			=f.number_field :height, class: "form-control", pleaceholder: "Altura"
+			= f.label :genre, "Genero"
+			= f.select :genre ,options_for_select([["Femenino", "female"],["Masculino", "male"]],@user.genre),{},:class=>"form-control"
 		.form-group
-			=f.label :chest, "Pecho"
-			=f.number_field :chest, class: "form-control", pleaceholder: "Pecho"
+			=f.label :height, "Altura"
+			.input-group
+				=f.number_field :age, class: "form-control",pleaceholder: "Altura"
+				%span.input-group-addon
+					Mts
+		.form-group
+			= f.label :chest, "Pecho"
+			.input-group
+				= f.text_field :chest, class: "form-control"
+				%span.input-group-addon
+					Cm
+		.form-group
+			= f.label :hip, "Cadera"
+			.input-group
+				=f.number_field :hip, class: "form-control"
+				%span.input-group-addon
+					Cm
+
+		.form-group
+			= f.label :hair_color, "Color de cabello"
+			= f.select :hair_color ,options_for_select([["Castaño", "Castaño"],["Negro", "Negro"],["Rojo", "Rojo"],["Rubio", "Rubio"],["Blanco", "Blanco"]],@user.hair_color),{},:class=>"form-control"
 
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
+
+		.form-group
+			= f.label :waist, "Cintura"
+			.input-group
+				=f.number_field :waist, class: "form-control"
+				%span.input-group-addon
+					Cm
 		.form-group
 			= f.label :weight, "Peso"
-			=f.number_field :weight, class: "form-control", pleaceholder: "Peso"
+			.input-group
+				=f.number_field :weight, class: "form-control"
+				%span.input-group-addon
+					Kg
+		.form-group
+			= f.label :eye_color, "Color de ojos"
+			= f.select :eye_color ,options_for_select([["Azules", "Azules"],["Negros", "Negros"],["Marrones", "Marrones"],["Verdes", "Verdes"],["Miel", "Miel"]],@user.eye_color),{},:class=>"form-control"
+
+		.form-group
+			= f.label :skin, "Color de piel"
+			= f.select :skin ,options_for_select([["Negro", "Negro"],["Mulato", "Mulato"],["Blanco", "Blanco"]],@user.skin),{},:class=>"form-control"
+		.form-group
+			= f.label :hair_length, "Longitud"
+			= f.select :hair_length ,options_for_select([["Corto", "Corto"],["Largo", "Largo"],["Medio", "Medio"],["Sin Pelo", "Sin Pelo"]],@user.hair_length),{},:class=>"form-control"
+
 .row
 	.col-xs-12.col-sm-12.col-md-12.col-lg-12
 		%submit.btn.btn-warning.btn-lg.btn-block.step_nav{:'data-nav'=>"next"}

@@ -1,17 +1,18 @@
 .row
-
 	.col-sm-12.col-md-10.col-lg-10
 		.content_site
-			.title
-				%h3
-					Books
 			.article
+				.title
+					%h3
+						Portafolios
 				.row.books_index
 					#container
 						- @books.each do |book|
-							.col-sm-12.col-md-4.col-lg-4.item_
-								.thumbnai.center
-									= link_to image_tag(book.front), pictures_path(book.id)
+							-book.pictures.each do |pic|
+								.col-sm-12.col-md-4.col-lg-4.item_
+									.center
+										= image_tag pic.url_url(:thumb)
+									
 
 
 :javascript

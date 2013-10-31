@@ -15,8 +15,13 @@ class Model < User
   field :age, type: Integer
   field :genre, :type =>String
   field :nationality, :type => String
+  field :eye_color, :type => Float
+  field :skin, :type => String
+  field :hair_color , :type=> String
+  field :hair_length, :type => String
 
 
-  attr_accessible :nationality,:genre,:height , :chest , :waist,:hip,:talent,:weight,:languages ,
+
+  attr_accessible :eye_color,:skin,:hair_length,:hair_color,:nationality,:genre,:height , :chest , :waist,:hip,:talent,:weight,:languages ,
                   :description ,:birthday ,:firstname , :lastname, :age
 end

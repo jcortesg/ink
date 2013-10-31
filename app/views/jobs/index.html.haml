@@ -32,3 +32,6 @@
       %p
         %h4
           Tags
+        - @tags.each do |f|
+          = f.name
+          = " - "

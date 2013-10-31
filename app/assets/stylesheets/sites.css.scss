@@ -20,7 +20,7 @@
 	height: 500px;
 	background: rgba(255,255,255,0.7);
 	.article{
-		padding: 20px;
+		padding: 0px 20px 20px 20px;
 	}
 }
 
@@ -44,9 +44,12 @@
 	padding: 20px;
 	}
 .title{
-	background: rgba(0,0,0,0.8);
-	color:#fff;
+	background: black;
+	color: #fff;
 	padding: 5px;
+	display: inline-block;
+	border-radius: 0px 0px 10px 10px;
+	margin-bottom: 10px;
 }
 .trm{
 	background-image: url(bg_pattern.png);

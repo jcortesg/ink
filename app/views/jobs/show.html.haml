@@ -2,22 +2,25 @@
   .col-sm-12.col-md-8.col-lg-8
     %article.item_portfolio
       .portfolio
-        .media
-          .pull-left
-            = image_tag @job.picture, :class=>"img-jobs"
-          .media-body
-            .media-heading
-              %h4
-                Comercial Para TOYOTA
-              %p
-                %small
-                  %span.icon-direction
-                    = @job.ubication
-                  |
-                  %span.icon-calendar
-                    = @job.date_end
-              %p
-                = @job.description
+        %h3
+          Comercial Para TOYOTA
+        %br
+        .row
+          .col-sm-12.col-md-5.col-lg-5
+            .img-rounded
+              = image_tag @job.picture, :class=>"img_"
+          .col-sm-12.col-md-7.col-lg-7
+            .media-body
+              .media-heading
+                %p
+                  %small
+                    %span.icon-direction
+                      = @job.ubication
+                    |
+                    %span.icon-calendar
+                      = @job.date_end
+                %p
+                  = @job.description
     .row
       .col-sm-12.col-md-12.col-lg-12
         .portfolio
@@ -42,6 +45,16 @@
             %br
             %span.icon-upload-cloud-outline
               ="#{@job.agent.subdomain}.isfamous.co"
+    .item_portfolio.col-sm-12.col-md-12.col-lg-12
+      .portfolio
+        -if current_user
+          -if @apply.nil?
+            = link_to "Aplicar", home_job_path(@job), :class=>"btn-lg btn-block btn btn-success", :method => :PUT
+          - else
+            .alert.alert-warning.center
+              Ya estas aplicando
+        -else
+          = link_to "Aplicar", "#login", :"data-toggle"=>"modal", :class=>"btn-lg btn-block btn btn-success"
     .item_portfolio.col-sm-12.col-md-12.col-lg-12
       .portfolio
         %h4

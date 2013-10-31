@@ -69,10 +69,10 @@ class User
   ##relations
 
   has_many :books
-  has_many  :tags
-  has_one :site 
+  has_and_belongs_to_many :tags
+  has_one :site
   embeds_many :networks
-  
+  has_and_belongs_to_many :jobs
 
   
 
@@ -113,7 +113,7 @@ class User
 
   #attributes accessibles
 
-  attr_accessible :check,:instagram,:google,:twitter,:facebook,:specialty,:firstname,:tw,:provider, :professional_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
+  attr_accessible :tag_ids, :check,:instagram,:google,:twitter,:facebook,:specialty,:firstname,:tw,:provider, :professional_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
                   :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid

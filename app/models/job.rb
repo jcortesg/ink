@@ -8,6 +8,7 @@ class Job
   field :picture, type: String
   field :address, type: String
   belongs_to :agent
+  has_and_belongs_to_many :users
 
   mount_uploader :picture, ImageUploader
 

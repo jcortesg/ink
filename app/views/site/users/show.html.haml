@@ -1,14 +1,14 @@
 .row
 	.col-sm-12.col-md-9.col-lg-9
-		.title
-			%h3
-				Sobre Mi
 		.content_site
 			.article
+				.title
+					%h3
+						Sobre Mi
 				.row
-					.col-sm-12.col-md-5.col-lg-5
-						.thumbnail
-							= image_tag @user.photo
+					.col-sm-12.col-md-5.col-lg-5.center
+						
+						= image_tag @user.photo
 					.col-sm-12.col-md-7.col-lg-7
 						%p
 							= @user.general_description

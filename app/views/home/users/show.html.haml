@@ -21,5 +21,31 @@
 						= @user.professional_description
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
+				%span.icon-picture-1
+					="#{@user.subdomain}.isfamous.co"
+				%br
+				%span.icon-facebook-circled
+					="facebook.com/#{@user.facebook}"
+				%br
+				%span.icon-twitter-circled
+					="twitter.com/#{@user.twitter}"
+				%br
+				%span.icon-instagramm
+					="instagram.com/#{@user.facebook}"
+
+		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
+			.portfolio
 				%h4
 					Tags
+				- @user.tags.each do |f|
+					= f.name
+					= " - "
+
+		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
+			.portfolio
+				%h4
+					Books
+				.row
+					- @user.books.each do |f|
+						.col-sm-12.col-md-6.col-lg-6
+							= image_tag f.front , :class =>"img_"

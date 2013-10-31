@@ -1,10 +1,10 @@
 .row
 	.col-sm-12.col-md-9.col-lg-9
-		.title
-			%h3
-				Bienvenido
 		.content_site
 			.article
+				.title
+					%h3
+						Bienvenido
 				%p.description
 				
 					= truncate(@user.professional_description, :length => 900)
@@ -16,6 +16,6 @@
 				.books_site
 					-  @books.each do |book|
 						.col-sm-6.col-md-4.col-lg-4
-							= image_tag(book.front ,:class=>"img-thumbnail")
+							= link_to image_tag(book.front_url(:thumb)), pictures_path(book.id)
 					
 			

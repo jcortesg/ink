@@ -1,37 +1,33 @@
 .row
-	.col-sm-12.col-md-9.col-lg-9
+	.col-sm-12.col-md-8.col-lg-8
 		.content_site
-			.title
-				%h3
-					Escribenos
-			.article
-				%p
-					= @user.site.contact
+			.col-sm-12.col-md-12.col-lg-12
+				.title
+					%h3
+						Conatactame
+			.col-sm-12.col-md-6.col-lg-6
 
-				.row
-					.col-sm-12.col-md-6.col-lg-6
-						%ul
-							%li
-								Facebook
-							%li
-								Twitter
-							%li
-								Intagram
-					.col-sm-12.col-md-6.col-lg-6
-						=form_tag 
-						.form-group
-							%label
-								Nombre
-							= text_field_tag :nombre,"", :class=>"form-control"
-						.form-group
-							%label
-								Email
-							= email_field_tag :email, "", :class=>"form-control"
-						.form-group
-							%label
-								Asunto
-							=	text_field_tag :asunto,"", :class=>"form-control"
-						.form-group
-							%label
-								Mensaje
-							= text_area_tag :mensaje,"", :class=>"form-control"
+				=form_tag 
+				.form-group
+					= text_field_tag :nombre,"", :placeholder =>"Nombre",:class=>"form-control input-lg"
+				.form-group
+					= email_field_tag :email, "",:placeholder =>"Email", :class=>"form-control input-lg"
+				.form-group
+					= text_area_tag :mensaje,"",:placeholder =>"Mensaje", :class=>"form-control input-lg", :rows =>"4"
+				.form-group
+					= submit_tag "Enviar", :class => "pull-right btn btn-success"
+
+			.col-sm-12.col-md-6.col-lg-6
+				.article
+					%p
+						= @user.site.contact
+
+					.row
+						.col-sm-12.col-md-6.col-lg-6
+							.social
+								%p.icon-facebook-circled
+									="facebook.com/#{@user.facebook}"
+								%p.icon-twitter-circled
+									="twitter.com/#{@user.twitter}"
+								%p.icon-instagramm
+									="instagram.com/#{@user.facebook}"
