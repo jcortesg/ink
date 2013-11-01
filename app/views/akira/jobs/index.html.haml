@@ -5,8 +5,9 @@
 		%h3
 			Ofertas
 		%hr
-		.pull-right
-			= link_to "Crear Oferta" , new_akira_user_job_path(current_user), :class =>"btn btn-info pull-right"
+		- if current_user._type == "Agent"
+			.pull-right
+				= link_to "Crear Oferta" , new_akira_user_job_path(current_user), :class =>"btn btn-info pull-right"
 	.stream
 
 		-@jobs.each do |job|
@@ -24,11 +25,12 @@
 							%span.icon-calendar
 								= job.date_end
 					%p
-						=job.description
+						=truncate(job.description, :length => 100)
 			.text-right
-				%span.icon-pencil
-					= link_to "Editar" , edit_akira_user_job_path(current_user ,job)
-					|
+				- if current_user._type == "Agent"
+					%span.icon-pencil
+						= link_to "Editar" , edit_akira_user_job_path(current_user ,job)
+						|
 				%span.icon-zoom-in
 					= link_to "Ver mas" , akira_user_job_path(current_user ,job)
 			%hr

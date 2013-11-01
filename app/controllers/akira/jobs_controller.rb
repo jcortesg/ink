@@ -12,7 +12,7 @@ class Akira::JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+    @jobs = current_user.jobs
   end
   # GET /jobs/1/edit
   def edit

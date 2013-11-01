@@ -1,23 +1,23 @@
 .col-sm-12.col-md-9.col-lg-9
 	=render 'akira/partials/nav_profile'
-	%br
 
-.row
-	.col-sm-12.col-md-12.col-lg-12
-		= image_tag @job.picture , :class => "img-job pull-left"
-		%h2
-			= @job.name
-		%p
-			%small
-				%span.icon-direction
-					= @job.ubication
-				|
-				%span.icon-calendar
-					= @job.date_end
-				|
-				%span.icon-pencil
-					=link_to "Editar" , edit_akira_user_job_path(current_user ,@job)
-		%p
-			=@job.description
-		
+	.row
+		.col-sm-12.col-md-12.col-lg-12
+			= image_tag @job.picture , :class => "img-job pull-left"
+			%h2
+				= @job.name
+			%p
+				%small
+					%span.icon-direction
+						= @job.ubication
+					|
+					%span.icon-calendar
+						= @job.date_end
+					- if current_user._type == "Agent"
+						|
+						%span.icon-pencil
+							=link_to "Editar" , edit_akira_user_job_path(current_user ,@job)
+			%p
+				=@job.description
+			
 

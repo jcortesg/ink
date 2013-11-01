@@ -3,11 +3,11 @@
 	.list-group
 		= link_to "Editar", edit_akira_model_path(current_user), :class=>"list-group-item"
 
-		= link_to "Editar web", edit_akira_user_site_path(current_user, current_user.site), :class=>"list-group-item",:target => "_blank"
+		= link_to "Editar web", edit_akira_user_site_path(current_user, current_user.site), :class=>"list-group-item"
 		
 		= link_to "Books", akira_user_books_path(current_user), :class=>"list-group-item"
-		- if current_user._type == "Agent"
-			= link_to "Ofetas Laborales", akira_user_jobs_path(current_user), :class=>"list-group-item"
+		
+		= link_to "Ofetas Laborales", akira_user_jobs_path(current_user), :class=>"list-group-item"
 		= link_to "Salir", destroy_user_session_path, :class=>"list-group-item",:method =>:DELETE
 
 .modal.fade#myPicture{:tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
