@@ -1,0 +1,13 @@
+.row.center
+	%h3
+		Categorias
+
+.row
+	-for tag in Tag.all
+		.col-xs-12.col-sm-12.col-md-6.col-lg-6
+			.form-group
+				.checkbox
+					= label_tag tag.name
+					= check_box_tag "model[tag_ids][]" , tag.id, @user.tags.include?(tag)
+
+	=f.submit "Actualizar" ,class: "btn btn-success btn-lg btn-block"
