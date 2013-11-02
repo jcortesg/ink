@@ -11,13 +11,24 @@
 							-book.pictures.each do |pic|
 								.col-sm-12.col-md-4.col-lg-4.item_
 									.center
-										= image_tag pic.url_url(:thumb)
+										= image_tag pic.url_url(:thumb), "#{picture.url}" ,:class=>"fancybox-button" , :rel=>"fancybox-button"
 									
-
 
 :javascript
 
-	var container = document.querySelector('#container');
-	var msnry = new Masonry( container, {
+	$(document).ready(function() {
+		$(".fancybox-button").fancybox({
+			prevEffect		: 'none',
+			nextEffect		: 'none',
+			closeBtn		: false,
+			helpers		: {
+				title	: { type : 'inside' },
+				buttons	: {}
+			}
+		});
+		var container = document.querySelector('#container');
+		var msnry = new Masonry( container, {
 	  itemSelector: '.item_'
 	});
+	});
+
