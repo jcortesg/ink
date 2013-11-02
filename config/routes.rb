@@ -33,7 +33,7 @@ Models::Application.routes.draw do
   end
 
   namespace :home do
-    resources :jobs
+    resources :jobs, only: [:index, :show ]
     resources :sites
     resources :users, only: [:index, :show ]
     
