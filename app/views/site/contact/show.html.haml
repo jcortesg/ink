@@ -23,11 +23,11 @@
 						= @user.site.contact
 
 					.row
-						.col-sm-12.col-md-6.col-lg-6
+						.col-sm-12.col-md-12.col-lg-12
 							.social
 								%p.icon-facebook-circled
-									="facebook.com/#{@user.facebook}"
+									=link_to "facebook.com/#{@user.facebook}", 'facebook.com/#{@user.facebook}'
 								%p.icon-twitter-circled
-									="twitter.com/#{@user.twitter}"
+									=link_to "twitter.com/#{@user.twitter}", 'twitter.com/#{@user.twitter}'
 								%p.icon-instagramm
-									="instagram.com/#{@user.facebook}"
+									=link_to "instagram.com/#{@user.instagram}", '"instagram.com/#{@user.instagram}"'

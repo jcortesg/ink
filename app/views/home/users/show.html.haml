@@ -22,16 +22,16 @@
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
 				%span.icon-picture-1
-					="#{@user.subdomain}.isfamous.co"
+					= link_to "#{@user.subdomain}.isfamous.co", root_url(:subdomain => current_user.subdomain)
 				%br
 				%span.icon-facebook-circled
-					="facebook.com/#{@user.facebook}"
+					=link_to "facebook.com/#{@user.facebook}", 'facebook.com/#{@user.facebook}'
 				%br
 				%span.icon-twitter-circled
-					="twitter.com/#{@user.twitter}"
+					=link_to "twitter.com/#{@user.twitter}", 'twitter.com/#{@user.twitter}'
 				%br
 				%span.icon-instagramm
-					="instagram.com/#{@user.facebook}"
+					=link_to "instagram.com/#{@user.instagram}", '"instagram.com/#{@user.instagram}"'
 
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
