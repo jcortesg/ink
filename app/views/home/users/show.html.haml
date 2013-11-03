@@ -22,7 +22,7 @@
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
 				%span.icon-picture-1
-					= link_to "#{@user.subdomain}.isfamous.co", root_url(:subdomain => current_user.subdomain)
+					= link_to "#{@user.subdomain}.isfamous.co", root_url(:subdomain => @user.subdomain)
 				%br
 				%span.icon-facebook-circled
 					=link_to "facebook.com/#{@user.facebook}", 'facebook.com/#{@user.facebook}'
