@@ -11,7 +11,7 @@
 							-book.pictures.each do |pic|
 								.col-sm-12.col-md-4.col-lg-4.item_
 									.center
-										= image_tag pic.url_url(:thumb), "#{pic.url}" ,:class=>"fancybox-button" , :rel=>"fancybox-button"
+										= link_to image_tag pic.url_url(:thumb), "#{pic.url}" ,:class=>"fancybox-button" , :rel=>"fancybox-button"
 									
 
 :javascript
