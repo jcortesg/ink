@@ -61,7 +61,7 @@ class Akira::UsersController < ApplicationController
         format.html { redirect_to root_path, notice: 'Model was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { redirect_to root_path, notice: 'Model was successfully updated.' }
         format.json { render json: @model.errors, status: :unprocessable_entity }
       end
     end
