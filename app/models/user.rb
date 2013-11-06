@@ -3,8 +3,6 @@ class User
   include Mongoid::Timestamps
   include Mongoid::MultiParameterAttributes
 
-
-  
   #before_validation :subdomain_valid
 
   # Include default devise modules. Others available are:

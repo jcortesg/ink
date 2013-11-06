@@ -1,5 +1,6 @@
 class Model < User
   include Mongoid::Document
+  include Mongoid::Timestamps
   include Mongoid::MultiParameterAttributes
   field :height, type: Float
   field :chest, type: Float
