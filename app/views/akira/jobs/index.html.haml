@@ -13,7 +13,7 @@
 		-@jobs.each do |job|
 			.media
 				.pull-left
-					= image_tag ("http://placehold.it/150x150")
+					=  image_tag @job.picture_url(:thumb).to_s , :class => "img_"
 				.media-body
 					%h4
 						=job.name
