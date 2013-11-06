@@ -1,5 +1,6 @@
 class Book
   include Mongoid::Document
+  include Mongoid::MultiParameterAttributes
   field :name, type: String
   field :description, type: String
   field :localitation, type: String

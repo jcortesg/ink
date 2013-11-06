@@ -1,6 +1,7 @@
 class Job
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::MultiParameterAttributes
   field :name, type: String
   field :description, type: String
   field :date_end, type: String
