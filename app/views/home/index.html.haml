@@ -58,7 +58,7 @@
         .media
           %a.pull-left
             %picture
-              = image_tag (job.picture_url(:thumb).to_s , :class => "img_")
+              = image_tag job.picture_url(:thumb) , :class => "img_"
           .media-body
             %h4.media-heading
               = link_to job.name, home_job_path(job)
