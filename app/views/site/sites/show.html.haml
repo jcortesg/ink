@@ -6,10 +6,7 @@
 					%h3
 						Bienvenido
 				%p.description
-				
-					= truncate(@user.general_description, :length => 900)
-					
-
+					= @user.general_description
 				%hr
 				.h3
 					Books

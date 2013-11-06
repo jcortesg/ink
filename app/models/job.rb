@@ -7,6 +7,7 @@ class Job
   field :ubication, type: String
   field :picture, type: String
   field :address, type: String
+  field :description_all, type: String
   belongs_to :agent
   has_and_belongs_to_many :users
 

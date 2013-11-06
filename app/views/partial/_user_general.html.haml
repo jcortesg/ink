@@ -14,10 +14,10 @@
 		.form-group
 			= f.label :name, "Nombre para mostrar"
 			= f.text_field :name, :pleceholder =>"Nombre", :class=>"form-control"
-
-		.form-group
-			= f.label :genre, "Genero"
-			= f.select :genre ,options_for_select([["Femenino", "female"],["Masculino", "male"]],@model.genre),{},:class=>"form-control"
+		-if !@model._type == "Agent"
+			.form-group
+				= f.label :genre, "Genero"
+				= f.select :genre ,options_for_select([["Femenino", "female"],["Masculino", "male"]],@model.genre),{},:class=>"form-control"
 		.form-group
 			= f.label :twitter, "Usuario de twitter"
 			.input-group
@@ -65,11 +65,11 @@
 	.col-xs-12.col-sm-12.col-md-6.col-lg-6
 		
 .form-group
-	= f.label :general_description , "Sobre ti"
-	=	f.text_area :general_description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 5
+	= f.label :general_description , "Descripción corta"
+	=	f.text_area :general_description , :class => "form-control", :rows => 5
 .form-group
-	= f.label :professional_description , "Sobre tu experiencia profesional"
-	=	f.text_area :professional_description , :pleceholder =>"Sobre ti", :class=>"form-control", :rows => 5
+	= f.label :professional_description , "Descripción general y profesional"
+	=	f.text_area :professional_description , :class => "redactor", :rows => 60, :cols => 120
 
 .center
 	%h3

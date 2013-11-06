@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
-
+//= require redactor-rails
 
 	$(function(){
 		$("#model_ubication").geocomplete({

@@ -5,14 +5,15 @@
 		%h3
 			Portafolios
 		%hr
-	.stream
-		= link_to "Nuevo book ", new_akira_user_book_path(current_user), :class=>"btn btn-info pull-right"
+	.form-group
+		.stream
+			= link_to "Nuevo book ", new_akira_user_book_path(current_user), :class=>"btn btn-info pull-right"
 
 		
 		.row
 			#container
 				-@books.each do |book| 
-					.col-sm-12.col-md-4.col-lg-4.item_
+					.col-sm-12.col-md-2.col-lg-4.item_
 						.thumbnai.center
 							= image_tag book.front_url(:thumb).to_s
 							%h4

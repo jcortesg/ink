@@ -5,12 +5,12 @@
 .row
 	.col-xs-12.col-sm-12.col-md-12.col-lg-12
 		.form-group
-			=f.label :general_description, "Descripcion general"
-			=f.text_area :general_description, class: "form-control", :rows => 5
+			=f.label :general_description, "Descripción Corta"
+			=f.text_area :general_description,  :class => "form-control", :rows => 5
 	.col-xs-12.col-sm-12.col-md-12.col-lg-12
 		.form-group
-			=f.label :professional_description, "Descripcion Profesional"
-			=f.text_area :professional_description, class: "form-control", :rows => 5
+			=f.label :professional_description, "Descripción general y Profesional"
+			=f.text_area :professional_description,:class => "redactor", :rows => 60, :cols => 120
 
 .row
 	.col-xs-12.col-sm-12.col-md-12.col-lg-12

@@ -15,17 +15,31 @@
 					.form-group
 						=f.label :ubication, "Ubicacion"
 						= f.text_field :ubication, :class =>"form-control"
+					.form-group
+						.form-control
+							= f.label :date_end, "Finaliza en :"
+							= f.date_select :date_end	,:order => [:day, :month, :year],:html =>{:class => "form-control"}
 				.col-xs-12.col-sm-12.col-md-6.col-lg-6
 					.form-group
 						= f.label :address, "Direccion"
 						= f.text_field :address, :class =>"form-control"
+
 					.form-group
 						= f.label :picture, "Imagen"
 						= f.file_field :picture, :class => "form-control"
 			.col-xs-12.col-sm-12.col-md-12.col-lg-12
-				.form-group
-					= f.label :description, "Descripcion"
-					=f.text_area :description, :class => "form-control", :rows => 4
 
+				.form-group
+					= f.label :description, "Descripción Corta"
+					=f.text_area :description, :class => "form-control", :rows => 2
+				.form-group
+					= f.label :description_all , "Descripción Larga"
+					=	f.text_area :description_all , :class => "redactor", :rows => 60, :cols => 120
 			.col-xs-12.col-sm-12.col-md-4.col-lg-4.pull-right
 				= f.submit "Guardar", :class =>"btn btn-info btn-lg btn-block"
+
+:javascript
+	$("#job_ubication").geocomplete({
+		map: ".map_canvas"
+	});
+			

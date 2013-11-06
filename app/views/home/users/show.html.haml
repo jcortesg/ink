@@ -18,7 +18,7 @@
 						%hr
 						= @user.general_description
 						%br
-						= @user.professional_description
+						= (@user.professional_description).html_safe
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
 				%span.icon-picture-1
