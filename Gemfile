@@ -31,6 +31,7 @@ gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog'
 gem 'rmagick'
+gem 'mini_magick'
 gem 'redactor-rails'
 
 
