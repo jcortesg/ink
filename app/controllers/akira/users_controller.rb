@@ -57,7 +57,7 @@ class Akira::UsersController < ApplicationController
     @model = User.find(params[:id])
 
     respond_to do |format|
-      if @model.update_attributes(params[:user])
+      if @model.update_attributes!(params[:user])
         format.html { redirect_to root_path, notice: 'Model was successfully updated.' }
         format.json { head :no_content }
       else
