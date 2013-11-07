@@ -28,7 +28,7 @@ class Akira::BooksController < ApplicationController
   # GET /books/new.json
   def new
     @book = Book.new
-    4.times{@book.pictures.build}
+    12.times{@book.pictures.build}
 
     respond_to do |format|
       format.html # new.html.erb
