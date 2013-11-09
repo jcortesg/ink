@@ -23,8 +23,17 @@
 
   <body class="<%= params[:controller] %>">
    <%= render "layouts/nav_white"%>
+   <% if current_user.site.bg %>
     <div class="wrap">
+      <div class="alert alert-warning">
+        <div class="container">
+          Tu actualiza su sitio web 
+          <%= link_to "Aqui", edit_akira_user_site_path(current_user, current_user.site)%>
+        </div>
+      </div>
+    <% end -%>
     <div class="container">
+
       <div class="row">
       <%= render "users/profile" , user: current_user %>
         <%= yield %>

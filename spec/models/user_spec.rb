@@ -16,15 +16,12 @@ describe User do
     }
   end
 
-  it "should require a contry & state & _type " do
-    no_accetp = User.new(@attr.merge(:contry => "" , :state => "",:_type => ""))
+  it "should require a  _type " do
+    no_accetp = User.new(@attr.merge(:_type => ""))
     no_accetp.should_not be_valid
   end
 
-  it "should require a description" do
-    no_accetp = User.new(@attr.merge(:description => ""))
-    no_accetp.should_not be_valid
-  end
+  
 
   it "should create a new instance given a valid attribute" do
     User.create!(@attr)
@@ -83,10 +80,6 @@ describe User do
       end
     end
 
-    it "should reject subdomain if it is nil " do
-      no_subdomain_user = User.new(@attr.merge(:subdomain => ""))
-      no_subdomain_user.should_not be_valid
-    end
   end
 
 

@@ -49,7 +49,7 @@ class Akira::BooksController < ApplicationController
 
     respond_to do |format|
       if user.books << @book
-        format.html { redirect_to akira_user_book_path(@book), notice: 'Book was successfully created.' }
+        format.html { redirect_to akira_user_books_path(user , @book), notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else
         format.html { render action: "new" }
@@ -65,7 +65,7 @@ class Akira::BooksController < ApplicationController
 
     respond_to do |format|
       if @book.update_attributes(params[:book])
-        format.html {redirect_to akira_user_book_path(@book), notice: 'Book was successfully updated.' }
+        format.html {redirect_to akira_user_book_path(user ,@book), notice: 'Book was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

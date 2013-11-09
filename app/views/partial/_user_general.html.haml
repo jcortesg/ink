@@ -10,19 +10,36 @@
 		.form-group
 			= f.label :email, "Email"
 			= f.text_field :email, :pleceholder =>"Email", :class=>"form-control"
-
+			%p.help-block
+				%em
+					*Email de contacto
 		.form-group
 			= f.label :name, "Nombre para mostrar"
 			= f.text_field :name, :pleceholder =>"Nombre", :class=>"form-control"
+			%p.help-block
+				%em
+					*Nombre completo o seudonimo(ej: Nathi Perez)
 		-if !@model._type == "Agent"
 			.form-group
 				= f.label :genre, "Genero"
 				= f.select :genre ,options_for_select([["Femenino", "female"],["Masculino", "male"]],@model.genre),{},:class=>"form-control"
 		.form-group
+			= f.label :subdomain , "Nombre para tu web"
+			.input-group
+				=	f.text_field :subdomain , :pleceholder =>"Username", :class=>"form-control"
+				%span.input-group-addon
+					=".isfamous.co"
+			%p.help-block
+				%em
+					*Url personalizada(ej: ana-perez.isfamous.co)
+		.form-group
 			= f.label :twitter, "Usuario de twitter"
 			.input-group
 				%span.input-group-addon.icon-twitter
 				= f.text_field :twitter, :pleceholder =>"@username",:class=>"form-control"
+			%p.help-block
+				%em
+					*Ej: @Isfamous
 		.form-group
 			= f.label :instagram, "Usuario instagram"
 			.input-group
@@ -34,20 +51,31 @@
 
 			=f.label :specialty, "¿Nombre de su profesion?"
 			= f.text_field :specialty, :pleceholder =>"Nombre", :class=>"form-control"
+			%p.help-block
+				%em
+					*Como se motrara su profesion (ej: Modelo /actor)
+
 		.form-group
 			= f.label :ubication, "Ubicacion Actual"
 			= f.text_field :ubication, :pleceholder =>"Ubicacion Actual", :class=>"form-control"
+			%p.help-block
+				%em
+					*Lugar donde reside (Ciudad , Pais)
+		= f.fields_for :site do |site|
+			.form-group
+				=site.label :bg , "Seleciona La imagen de fondo de ti sitio web"
+				= site.file_field :bg,  class: "form-control"
+			%p.help-block
+				%em
+					*Fondo de tu web (Tono oscuro)
 		.form-group
-			= f.label :subdomain , "Nombre para tu web"
-			.input-group
-				=	f.text_field :subdomain , :pleceholder =>"Username", :class=>"form-control"
-				%span.input-group-addon
-					=".isfamous.co"
-		.form-group
-			= f.label :twitter, "Fanpage Facebook"
+			= f.label :facebook, "Fanpage Facebook"
 			.input-group
 				%span.input-group-addon.icon-facebook
 				= f.text_field :facebook,:class=>"form-control"
+			%p.help-block
+				%em
+					*Ej: pages/Isfamous/275783179146437
 		.form-group
 			= f.label :google, "Usuario Google+"
 			.input-group

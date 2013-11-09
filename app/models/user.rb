@@ -3,7 +3,7 @@ class User
   include Mongoid::Timestamps
   include Mongoid::MultiParameterAttributes
 
-  #before_validation :subdomain_valid
+  before_validation :subdomain_valid
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -100,15 +100,12 @@ class User
   validates_presence_of :name 
   validates_presence_of :email
   validates_presence_of :encrypted_password
-  #validates_presence_of :description
+  validates_presence_of :_type
 
   mount_uploader :photo, ImageUploader
   #validate subdomain
 
-  #validates_presence_of :subdomain
-  #validates_uniqueness_of :subdomain
-  #validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
-  #validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/
+
 
   #attributes accessibles
 
@@ -116,7 +113,11 @@ class User
                   :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
   def subdomain_valid
-    self.subdomain = self.subdomain.downcase! if attribute_present?("sundomain")
+      #validates_presence_of :subdomain
+    validates_uniqueness_of :subdomain if attribute_present?("subdomain")
+    validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable." if attribute_present?("subdomain")
+    validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/ if attribute_present?("subdomain")
+    self.subdomain = self.subdomain.downcase! if attribute_present?("subdomain")
   end
 
 
