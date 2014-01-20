@@ -33,7 +33,7 @@ gem 'fog'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'redactor-rails'
-gem "activeadmin-mongoid",  git: 'git://github.com/elia/activeadmin-mongoid.git' 
+gem "activeadmin-mongoid",  git: 'git://github.com/elia/activeadmin-mongoid.git',  branch: 'master' 
 
 
 group :development do
