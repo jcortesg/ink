@@ -33,6 +33,7 @@ gem 'fog'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'redactor-rails'
+gem "activeadmin-mongoid"
 
 
 group :development do

@@ -1,12 +1,14 @@
 Models::Application.routes.draw do
   
 
-  mount RedactorRails::Engine => '/redactor_rails'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   authenticated :user do
     root :to => 'users#dashboard'
   end
   devise_for :users , path_names: { sign_in: "login", sign_out: "logout"} ,controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  ActiveAdmin.routes(self)
   
  scope :module => 'site', :constraints => { :subdomain => /.+/ } do
     root :to =>'sites#show'
