@@ -342,7 +342,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin (~> 0.4.0)
   activeadmin-mongoid!
   better_errors (>= 0.7.2)
   binding_of_caller (>= 0.7.1)
