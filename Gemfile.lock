@@ -1,14 +1,13 @@
 GIT
-  remote: git://github.com/elia/activeadmin-mongoid.git
-  revision: 3fa3b4b412bdb25f26769236d408982787d7159e
-  branch: master
+  remote: https://github.com/iAmeen/activeadmin-mongoid.git
+  revision: d3d05ee9f005a01b7e19b4a5c98ee912f4e5a263
+  ref: d3d05ee9f005a01b7e19b4a5c98ee912f4e5a263
   specs:
-    activeadmin-mongoid (0.3.0)
-      activeadmin (~> 0.6)
-      jquery-rails (< 3.0)
-      meta_search (~> 1.1.3)
-      mongoid (> 3.0, < 5.0)
-      sass-rails (>= 3.1.4, < 5.0)
+    activeadmin-mongoid (0.0.1)
+      activeadmin (~> 0.4)
+      meta_search (>= 1.1.0.pre)
+      mongoid (>= 2.0)
+      sass-rails (~> 3.1, >= 3.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -26,17 +25,17 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    activeadmin (0.6.2)
-      arbre (~> 1.0)
-      bourbon (>= 1.0.0, < 4)
-      devise (>= 1.5.4, < 4)
-      formtastic (~> 2.0)
-      inherited_resources (~> 1.3)
-      jquery-rails (>= 1.0.0, < 3)
-      kaminari (~> 0.13)
-      meta_search (~> 1.0)
-      rails (>= 3.0.0, < 4)
-      sass (~> 3.1)
+    activeadmin (0.4.4)
+      bourbon (>= 1.0.0)
+      devise (>= 1.1.2)
+      fastercsv
+      formtastic (~> 2.1.1)
+      inherited_resources (>= 1.3.1)
+      jquery-rails (>= 1.0.0)
+      kaminari (>= 0.13.0)
+      meta_search (>= 0.9.2)
+      rails (>= 3.0.0)
+      sass (>= 3.1.0)
     activemodel (3.2.12)
       activesupport (= 3.2.12)
       builder (~> 3.0.0)
@@ -52,8 +51,6 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.5)
-    arbre (1.0.1)
-      activesupport (>= 3.0.0)
     arel (3.0.3)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -131,6 +128,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    fastercsv (1.5.5)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -145,8 +143,8 @@ GEM
       nokogiri (~> 1.5)
       ruby-hmac
     formatador (0.2.4)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
+    formtastic (2.1.1)
+      actionpack (~> 3.0)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     haml (4.0.5)
@@ -344,6 +342,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin (~> 0.4.0)
   activeadmin-mongoid!
   better_errors (>= 0.7.2)
   binding_of_caller (>= 0.7.1)
@@ -363,7 +362,7 @@ DEPENDENCIES
   jquery-rails
   launchy (>= 2.2.0)
   mini_magick
-  mongoid (>= 3.1.2)
+  mongoid
   mongoid-rspec (>= 1.7.0)
   omniauth
   omniauth-facebook
@@ -378,7 +377,6 @@ DEPENDENCIES
   redactor-rails
   rmagick
   rspec-rails (>= 2.12.2)
-  sass-rails (~> 3.2.3)
   thin (>= 1.5.0)
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
