@@ -33,7 +33,7 @@ gem 'rmagick'
 gem 'mini_magick'
 gem 'redactor-rails'
 gem 'activeadmin-mongoid', :git => 'https://github.com/iAmeen/activeadmin-mongoid.git' , :ref=> 'd3d05ee9f005a01b7e19b4a5c98ee912f4e5a263'
-gem 'activeadmin', '~> 0.4.0'
+#gem 'activeadmin', '~> 0.4.0'
 
 
 group :development do
