@@ -15,9 +15,8 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require redactor-rails
-//= require jquery_ui
-//= require jquery.ui.all
-$(function(){
+
+	$(function(){
 		$("#model_ubication").geocomplete({
       details: "form",
       types: ["geocode", "establishment"]

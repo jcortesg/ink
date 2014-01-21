@@ -5,13 +5,12 @@ ruby '2.0.0'
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+   gem 'jquery-rails'
   gem 'twitter-bootstrap-rails'
-  gem 'jquery-ui-rails'
 end
 
 gem 'haml'
 gem 'cancan'
-gem 'jquery-rails', "<= 3.0.4"
 gem "thin", ">= 1.5.0"
 gem "mongoid"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
@@ -33,7 +32,7 @@ gem 'rmagick'
 gem 'mini_magick'
 gem 'redactor-rails'
 gem 'activeadmin-mongoid', :git => 'https://github.com/iAmeen/activeadmin-mongoid.git', :branch => 'active-admin-spec-suite'
-gem 'activeadmin', '~> 0.5.0'
+gem 'activeadmin'
 
 
 group :development do
