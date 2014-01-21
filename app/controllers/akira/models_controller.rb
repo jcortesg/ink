@@ -34,7 +34,7 @@ class Akira::ModelsController < ApplicationController
   def update
     
     @model = User.find(params[:id])
-
+    p params
     respond_to do |format|
       if @model.update_attributes(params[:model])
         format.html { redirect_to root_path, notice: 'Model was successfully updated.' }

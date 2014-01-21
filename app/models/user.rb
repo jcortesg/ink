@@ -9,7 +9,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
   field :email,              :type => String , :default =>""
@@ -30,7 +30,7 @@ class User
   field :cel, :type => Integer
   field :_type, :type => String
   field :active, :type => Boolean, :default => false
-  
+
   ##Social data
   field :tw, :type => String
   field :provider, :type => String
@@ -38,14 +38,14 @@ class User
   field :twitter, :type => String
   field :google, :type => String
   field :instagram, :type => String
-  
+
   ## flag for profile
   field :check, :type => Boolean, :default => false
   ## Site Data
   field :specialty, :type => String
   field :general_description , :type => String
   field :professional_description , :type => String 
-  
+
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
@@ -73,7 +73,7 @@ class User
   embeds_many :networks
   has_and_belongs_to_many :jobs
 
-  
+
 
   ## Confirmable
   # field :confirmation_token,   :type => String
@@ -90,7 +90,7 @@ class User
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
   index({ email: 1 }, { unique: true, background: true })
- 
+
 
   ## aceppts attributes
   accepts_nested_attributes_for :books 
@@ -110,16 +110,21 @@ class User
   #attributes accessibles
 
   attr_accessible :tag_ids, :check,:instagram,:google,:twitter,:facebook,:specialty,:firstname,:tw,:provider, :professional_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
-                  :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
+    :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
+    validates_presence_of :subdomain
+    validates_uniqueness_of :subdomain
+    
+    validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
+   
+    validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/ 
+   
   def subdomain_valid
-      #validates_presence_of :subdomain
-    validates_uniqueness_of :subdomain if attribute_present?("subdomain")
-    validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable." if attribute_present?("subdomain")
-    validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/ if attribute_present?("subdomain")
-    self.subdomain = self.subdomain.downcase! if attribute_present?("subdomain")
+    p "ok"
+    p self.subdomain
+    self.subdomain = self.subdomain.downcase 
+    p self.subdomain
   end
-
 
 
   def self.find_for_oauth(auth, signed_in_resource=nil)
