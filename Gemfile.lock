@@ -362,7 +362,7 @@ DEPENDENCIES
   figaro (>= 0.6.3)
   fog
   haml
-  jquery-rails
+  jquery-rails (<= 3.0.4)
   launchy (>= 2.2.0)
   mini_magick
   mongoid

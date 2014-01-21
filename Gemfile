@@ -11,7 +11,7 @@ end
 
 gem 'haml'
 gem 'cancan'
-gem 'jquery-rails'
+gem 'jquery-rails', "<= 3.0.4"
 gem "thin", ">= 1.5.0"
 gem "mongoid"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
