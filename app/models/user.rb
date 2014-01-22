@@ -112,12 +112,12 @@ class User
   attr_accessible :tag_ids, :check,:instagram,:google,:twitter,:facebook,:specialty,:firstname,:tw,:provider, :professional_description,:address,:tel,:general_description,:photo, :name, :subdomain ,:email, :password, :password_confirmation, 
     :remember_me,:ubication, :created_at, :updated_at , :_type, :contry ,:state ,:site_attributes,:description
 
-    validates_presence_of :subdomain
-    validates_uniqueness_of :subdomain
+   # validates_presence_of :subdomain
+   # validates_uniqueness_of :subdomain
     
-    validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
+    #validates_exclusion_of :subdomain, :in => %w( www ftp api support blog billing help smtp ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
    
-    validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/ 
+    #validates_format_of :subdomain, :with => /^[A-Za-z0-9-]+$/ 
    
   def subdomain_valid
     p "ok"
