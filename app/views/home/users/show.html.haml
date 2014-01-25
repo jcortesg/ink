@@ -8,8 +8,6 @@
 			.col-sm-12.col-md-12.col-lg-12
 				.portfolio
 					%p
-						%h3
-							=@user.name
 						%span.icon-direction
 							=@user.ubication
 						|
@@ -19,20 +17,7 @@
 						= @user.general_description
 						%br
 						= (@user.professional_description).html_safe
-		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
-			.portfolio
-				%span.icon-picture-1
-					= link_to "#{@user.subdomain}.isfamous.co", root_url(:subdomain => @user.subdomain)
-				%br
-				%span.icon-facebook-circled
-					=link_to "Facebook","https://www.facebook.com/#{@user.facebook}"
-				%br
-				%span.icon-twitter-circled
-					=link_to "Twitter","https://www.twitter.com/#{@user.twitter}"
-				%br
-				%span.icon-instagramm
-					=link_to "Instagram","http://instagram.com/#{@user.instagram}"
-
+  
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
 				%h4
@@ -40,6 +25,12 @@
 				- @user.tags.each do |f|
 					= f.name
 					= " - "
+		
+		-if @user._type == "Model"
+			%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
+				.portfolio
+					Hola:w
+
 
 		%article.item_portfolio.col-sm-12.col-md-4.col-lg-4
 			.portfolio
@@ -48,4 +39,4 @@
 				.row
 					- @user.books.each do |f|
 						.col-sm-12.col-md-6.col-lg-6
-							= link_to image_tag(f.front_url(:thumb)),root_url(:subdomain => @user.subdomain) ,:class =>"img_"
+							= image_tag f.front_url(:thumb) ,:class =>"img_"
